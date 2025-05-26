@@ -40,7 +40,7 @@
 
 Korea_IT_Academy/Python/index.md
 Korea_IT_Academy/Python/class_1.md
-Korea_IT_Academy/Python/Class1/index.md
+Korea_IT_Academy/Python/class1/index.md
 ```
 
 ```{toctree}
