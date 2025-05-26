@@ -9,6 +9,17 @@
 </center>
 
 
+### 목차
+
+```{toctree}
+:maxdepth: 4
+:caption: Korea IT Academy
+
+Korea_IT_Academy/ADsP/index.md
+Korea_IT_Academy/Python/index.md
+```
+
+
 ##### 약력
 - 충북대학교 정보통계학 전공
 - 통계인재개발원 SAS 초·중 ·고급 프로그래밍 과정 보조강사
