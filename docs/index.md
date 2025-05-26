@@ -8,18 +8,6 @@
 일단 배우고 보는 나정수입니다.
 </center>
 
-
-### 목차
-
-```{toctree}
-:maxdepth: 4
-:caption: Korea IT Academy
-
-Korea_IT_Academy/ADsP/index.md
-Korea_IT_Academy/Python/index.md
-```
-
-
 ##### 약력
 - 충북대학교 정보통계학 전공
 - 통계인재개발원 SAS 초·중 ·고급 프로그래밍 과정 보조강사
@@ -41,3 +29,22 @@ Korea_IT_Academy/Python/index.md
 - Linux 시스템 관리 및 Shell Script
 - AWS 및 자체 데이터베이스 구축
 - 네트워크 구축
+
+---
+
+### 목차
+
+```{toctree}
+:maxdepth: 2
+:caption: Korea IT Academy - Python
+
+Korea_IT_Academy/Python/index.md
+Korea_IT_Academy/Python/Class1.md
+```
+
+```{toctree}
+:maxdepth: 2
+:caption: Korea IT Academy - ADsP
+
+Korea_IT_Academy/ADsP/index.md
+```
