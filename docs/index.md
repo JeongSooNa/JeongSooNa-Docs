@@ -39,7 +39,7 @@
 :caption: Korea IT Academy - Python
 
 Korea_IT_Academy/Python/index.md
-Korea_IT_Academy/Python/Class1.md
+Korea_IT_Academy/Python/Class1/index.md
 ```
 
 ```{toctree}
