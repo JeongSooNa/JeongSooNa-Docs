@@ -39,8 +39,7 @@
 :caption: Korea IT Academy - Python
 
 Korea_IT_Academy/Python/index.md
-Korea_IT_Academy/Python/class_1.md
-Korea_IT_Academy/Python/class1/index.md
+Korea_IT_Academy/Python/test.md
 ```
 
 ```{toctree}
@@ -48,4 +47,5 @@ Korea_IT_Academy/Python/class1/index.md
 :caption: Korea IT Academy - ADsP
 
 Korea_IT_Academy/ADsP/index.md
+Korea_IT_Academy/ADsP/class_1.md
 ```
