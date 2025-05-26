@@ -1,5 +1,8 @@
 # docs/conf.py
 
+import os
+import sys
+
 project = 'JeongSooNa Docs'
 author = 'JeongSooNa'
 release = '0.1'
