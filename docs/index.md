@@ -35,14 +35,14 @@
 ### 목차
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Korea IT Academy - Python
 
 Korea_IT_Academy/Python/index.md
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Korea IT Academy - ADsP
 
 Korea_IT_Academy/ADsP/index.md
