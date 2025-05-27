@@ -1,1 +1,2 @@
-# Class 1
+# Class 1 - IT 기초
+
