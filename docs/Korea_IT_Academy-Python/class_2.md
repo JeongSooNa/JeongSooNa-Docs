@@ -1,1 +1,2 @@
-# Class 2 - Python 
+# Class 2 - Python이란?
+

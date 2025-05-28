@@ -56,3 +56,13 @@
     - 객체에 속성과 기능을 넣어 줄 설계도
 - 인터페이스(Interface)
     - 클래스를 바탕으로 메모리에 할당 된 실체
+
+### 프레임워크
+- 소프트웨어 개발을 돕기 위해 필요한 구조와 라이브러리를 제공하는 기능
+- Spring(Java), Flask(Python), React(Javascript) 등
+
+### 데이터베이스
+- 데이터 저장 및 관리를 위한 저장소
+![jpg](../img/Database.png)
+- DBMS(Database Management System) : 데이터베이스를 관리하고 운영하는 소프트웨어
+    - Oracle, MySQL, SQLite 등
