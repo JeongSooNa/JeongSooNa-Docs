@@ -5,9 +5,9 @@
 ### 사용 환경
 - Window OS
 - Python 3.x.x
-- Conda Environments
-- Jupyter Notebook
 - Visual Studio
+- Jupyter Notebook
+- Conda Environments
 - WSL2 (Linux in Window)
 
 ### Python 설치
@@ -39,4 +39,11 @@ python --verison
 3. VS Code 설치
 - 편의성을 위해 폴더 열기 옵션에 추가
 
-### Conda
+### Jupyter Notebook 설치
+- Python 코드를 문서 내에서 바로 실행할 수 있도록 환경 및 파일 제공
+- VS Code, Anaconda Toolbox에서 사용 가능
+- 주로 실습이나 Documentation, 테스트 등에 사용되고, 실무 사용에는 적합하지 않다.
+
+1. Anaconda Navigator 설치
+
+2. Jupyter Notebook Install / Launch
