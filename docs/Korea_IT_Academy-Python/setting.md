@@ -47,3 +47,5 @@ python --verison
 1. Anaconda Navigator 설치
 
 2. Jupyter Notebook Install / Launch
+
+3. Jupyter Notebook 어플리케이션 실행 혹은 Anaconda Navigator를 통해 오픈

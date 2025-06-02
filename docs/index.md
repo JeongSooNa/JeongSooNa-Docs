@@ -42,6 +42,20 @@ Korea_IT_Academy-Python/index.md
 Korea_IT_Academy-Python/setting.md
 Korea_IT_Academy-Python/class_1.md
 Korea_IT_Academy-Python/class_2.md
+Korea_IT_Academy-Python/class_3.md
+Korea_IT_Academy-Python/class_4.md
+Korea_IT_Academy-Python/class_5.md
+Korea_IT_Academy-Python/class_6.md
+Korea_IT_Academy-Python/class_7.md
+Korea_IT_Academy-Python/class_8.md
+Korea_IT_Academy-Python/class_9.md
+Korea_IT_Academy-Python/class_10.md
+Korea_IT_Academy-Python/class_11.md
+Korea_IT_Academy-Python/class_12.md
+Korea_IT_Academy-Python/class_13.md
+Korea_IT_Academy-Python/test_1.md
+Korea_IT_Academy-Python/test_2.md
+Korea_IT_Academy-Python/test_3.md
 ```
 
 ```{toctree}
