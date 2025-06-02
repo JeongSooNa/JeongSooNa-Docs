@@ -1,1 +1,1 @@
-# # Class 4 - Python 연산
+# Class 4 - Python 연산

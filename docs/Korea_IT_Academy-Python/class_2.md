@@ -28,7 +28,7 @@ print("Hello World!")
 
 - 객체 지향 언어이다.
 
-<img src="../img/object.png" width="400">
+![jpg](../img/object.png)
 
 파이썬이 객체 지향 언어인 이유는 Class의 개념이 존재하기 때문으로, 객체화, 상속 등의 기능을 한다.
 
