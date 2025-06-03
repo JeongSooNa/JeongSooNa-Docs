@@ -18,29 +18,118 @@ a = 10
 print(a)
 ```
 
-### 타입
-- 변수의 종류, 자료형
+```py
+a = 1
+b = a
+a = 2
+print(a,b)
 
+# 마지막으로 정의 된 값이 어떤 값인지에 따라 변수는 변할 수 있다.
+```
+
+- 대문자와 소문자를 반드시 구분하여 사용한다.
+- 변수의 선언은 다른 사용자 혹은 공동 개발자가 알아볼 수 있도록 정확히 명시하는 것이 좋다.
+    - ex)
+    ```py
+    # 학번을 나타내는 변수
+    studentID = 2013016032
+    # 이름을 나타내는 변수
+    student_name = "JeongSoo Na"
+    ```
+
+
+### 기본 타입
+- 변수의 종류, 자료형
+- 파이썬에서는 어떤 값을 정의하냐에 따라 타입이 자동으로 결정.
+
+- 정수형
 ```py
 # int(integer)
 a = 1
-
+```
+- 실수형
+```py
 # float
 b = 1.2
-
+```
+- 문자형
+```py
 # str(string, character)
 c = "Python"
-
+```
+- 논리형
+```py
 # bool(Boolean, True/False)
 d = True
-
+```
+- 빈 값
+```py
 # NoneType
-
 e = None
+```
 
+- 변수의 타입을 알고 싶을 때는 type 함수를 사용한다.
+```py
 print("a의 타입은 : ",type(a))
 print("b의 타입은 : ",type(b))
 print("c의 타입은 : ",type(c))
 print("d의 타입은 : ",type(d))
 print("e의 타입은 : ",type(e))
 ```
+
+### 형변환
+- 정의 된 변수의 타입을 변환할 수 있다.
+
+```py
+a = 1 # 숫자형
+b = "1" # 문자형
+
+c = str(a) # 숫자 > 문자
+d = int(b) # 문자 > 숫자
+```
+
+### 리스트
+- List란 여러 값을 담을 수 있는 변수이다.
+```py
+a = [1,2,3,4,5]
+```
+
+- List 안의 값들은 서로 다른 타입을 가질 수 있다.
+```py
+a = [1,1.2,"Hello",True, None]
+```
+
+- List 안에 List를 넣을 수 있다.
+```py
+students = [[1,"짱구"],[2,"철수"],[3,"맹구"],[4,"유리"],[5,"훈이"]]
+```
+
+- 인데스(index)를 사용해 리스트 값에 접근할 수 있다.
+- index는 List의 첫번째가 0 부터 시작한다.
+```py
+print(students[0])
+print(students[1])
+print(students[-1])
+
+print(students[0][0])
+print(students[0][1])
+print(students[2][1])
+```
+
+- index를 사용해 List의 값을 수정할 수있다.
+```py
+student[4][1] = "수지"
+
+print(students)
+```
+
+- 슬라이싱(:)을 통해 범위 값을 모두 볼 수 있다.
+- 슬라이싱의 범위는 시작 index는 포함하나 끝 index는 포함하지 않는다.
+```py
+print(students[2:4]) # 2,3 출력
+```
+
+### 리스트 관련 함수
+
+
+### 딕셔너리
