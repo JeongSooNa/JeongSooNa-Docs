@@ -1,1 +1,1 @@
-# Class 5 - Python 반복문
+# Class 5 - Python 조건문 & 반복문
