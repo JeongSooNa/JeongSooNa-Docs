@@ -31,3 +31,4 @@
 - Jupyter Notebook
 - Visual Studio
 - WSL2 (Linux in Window)
+- Git / Github

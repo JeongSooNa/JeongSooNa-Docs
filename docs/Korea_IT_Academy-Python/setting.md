@@ -13,9 +13,11 @@
 ### Python 설치
 
 1. Python 검색
+
 ![jpg](../img/python_install_1.png)
 
 2. Python 다운로드
+
 ![jpg](../img/python_install_2.png)
 
 3. Python 버전 확인
@@ -31,13 +33,41 @@ python --verison
 - 다양한 확장성
 
 1. VS Code 검색
+
 ![jpg](../img/vscode_install_1.PNG)
 
 2. VS Code (WIndows) 다운로드
+
 ![jpg](../img/vscode_install_2.PNG)
 
 3. VS Code 설치
 - 편의성을 위해 폴더 열기 옵션에 추가
+
+### Github
+- 개발자들을 위한 오픈소스 코드 공유 플랫폼
+- 개인저장, 협업, 코드리뷰, 이슈 트래킹 등 다양한 용도로 사용되고 있다.
+
+- 용어
+    - Repository : 저장소
+    - Commit : 본인의 환경에 임시 저장
+    - Push : Commit 내용을 저장소에 저장
+    - Pull : 저장소를 내 환경에 불러오기
+
+1. Git 설치
+
+![jpg](../img/git_install.png)
+
+2. Github Account 생성
+
+3. 환경 내 Github User 등록
+```
+git config user.name (github 이름)
+git config user.email (github 이메일)
+```
+4. Reposiroty 생성
+
+5. Connect, Commit, Push, Pull Test
+
 
 ### Jupyter Notebook 설치
 - Python 코드를 문서 내에서 바로 실행할 수 있도록 환경 및 파일 제공
