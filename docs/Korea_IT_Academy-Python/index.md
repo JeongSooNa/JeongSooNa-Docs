@@ -19,6 +19,8 @@
     - 다양한 OS(Window, Linux 등)기반 자동화 프로그램 구현
     - AI 기반 학습 모델 구현
 - 파이썬 미니 프로젝트
+    - [python mini project github](https://github.com/ndleah/python-mini-project)
+    - Python 프로그래밍 능력 향상 및 포트폴리오 작성 등을 위한 최종 목표
 
 > IT 직무 취업 및 이직을 위해  
 > 업무 자동화 및 데이터 처리를 위해  
