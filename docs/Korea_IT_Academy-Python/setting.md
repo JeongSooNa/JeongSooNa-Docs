@@ -23,6 +23,7 @@
 3. Python 버전 확인
 ```bash
 python --verison
+python3 --version
 ```
 
 ### Visual Studio Code 설치
