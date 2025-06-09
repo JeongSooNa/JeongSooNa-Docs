@@ -74,3 +74,10 @@ Korea_IT_Academy-ADsP/index.md
 Korea_IT_Academy-ADsP/class_1.md
 ```
 -->
+
+```{toctree}
+:maxdepth: 2
+:caption: TIPS
+
+TIPS/index.md
+```
