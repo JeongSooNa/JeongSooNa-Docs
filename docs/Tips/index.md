@@ -10,4 +10,14 @@ IT 직무 혹은 개발에 유용한 꿀팁 모음
     - [Java mini project](https://github.com/topics/java-mini-project)
 
 ### 코딩 역량 강화 및 코딩 테스트 대비
-최근 IT 직무, 
+최근 IT 직무 수요 증가와 함께 대기업을 포함한 대부분의 기업 IT 직군 모집에서 코딩 역량을 확인하는 테스트를 갖고 있습니다.  
+이에 따라 알고리즘 구현 능력과 기초적인 문법 및 함수를 활용한 코딩 테스트 대비는 필수 요소로 자리잡고 있습니다.
+
+- 코딩 테스트 추천 사이트
+    - [백준](https://www.acmicpc.net/)
+    - [프로그래머스](https://school.programmers.co.kr/)
+- 웹 프로그래밍 서비스
+    - 따로 환경 세팅이 필요 없이 온라인에서 코드를 작성하고 실행해 볼 수 있는 서비스 입니다.
+    - [구글 Colab](https://colab.research.google.com/)
+    - [Tutorials point](https://www.tutorialspoint.com/compilers/index.htm)
+    - [Replit](https://replit.com/)
