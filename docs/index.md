@@ -79,5 +79,5 @@ Korea_IT_Academy-ADsP/class_1.md
 :maxdepth: 2
 :caption: TIPS
 
-TIPS/index.md
+Tips/index.md
 ```
