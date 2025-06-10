@@ -42,7 +42,12 @@ git config user.email __github_이메일__
     - [백준](https://www.acmicpc.net/)
     - [프로그래머스](https://school.programmers.co.kr/)
 - 웹 프로그래밍 서비스
-    - 따로 환경 세팅이 필요 없이 온라인에서 코드를 작성하고 실행해 볼 수 있는 서비스 입니다.
+    - 따로 환경 세팅이 필요 없이 온라인에서 코드를 작성하고 실행해 볼 수 있는 서비스입니다.
     - [구글 Colab](https://colab.research.google.com/)
+        - Linux 환경에서의 간단한 테스트, OS와 연동된 프로그램 개발 테스트에 적합한 웹 서비스입니다.
     - [Tutorials point](https://www.tutorialspoint.com/compilers/index.htm)
+        - 다양한 언어를 제공하며, 빠르게 간단한 코드를 실행시켜보고 싶을 때 적합합니다.
     - [Replit](https://replit.com/)
+        - 개발부터 배포까지 웹으로 가능한 서비스입니다.
+    - [CodePen](https://codepen.io/)
+        - 주로 프론트앤드 결과물 확인에 적합하며, 다양한 웹 디자인을 가져오고, 수정할 수 있습니다.
