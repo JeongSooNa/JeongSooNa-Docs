@@ -52,9 +52,9 @@ Korea_IT_Academy-Python/class_4.md
 Korea_IT_Academy-Python/class_5.md
 Korea_IT_Academy-Python/class_6.md
 Korea_IT_Academy-Python/class_7.md
+Korea_IT_Academy-Python/class_8.md
 ```
 <!-- 
-Korea_IT_Academy-Python/class_8.md
 Korea_IT_Academy-Python/class_9.md
 Korea_IT_Academy-Python/class_10.md
 Korea_IT_Academy-Python/class_11.md
