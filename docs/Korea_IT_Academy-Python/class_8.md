@@ -13,14 +13,62 @@
 
 ### open
 - open을 통해 외부 파일을 읽어올 수 있다.
+
+- open 함수의 옵션에는 r, w, a 가 있다.
+    - r : 파일 읽기
+    - w : 파일 쓰기
+    - a : 파일 마지막에 내용 추가
+
+- Text file을 만들어 실습에 사용
+
 - test.txt
+
 ```txt
-Hello World!
+My name is JeongSoo Na
 ```
+
 ```py
 f = open(test.txt,"r")
 text = f.read()
 print(text)
+f.close()
 ```
 
-- open 함수의 옵션에는 
+```py
+f = open(test.txt,"w")
+f.write("My name is ")
+f.close()
+```
+
+```py
+f = open(test.txt,"a")
+f.write("JeongSoo Na")
+f.close()
+```
+
+- 여러 줄을 읽고 구별할 수 있어 데이터 분석에도 사용이 가능
+
+- order.txt
+```txt
+id  menu    price
+1   pizza   10$
+2   chicken 15$
+3   hamburger   5$
+```
+
+```py
+f = open("order.txt","r")
+
+full = f.read()
+print(full_data)
+
+line = f.readline()
+print(line)
+
+lines = f.readlines()
+print(lines)
+
+### use data
+
+################ updating...
+```

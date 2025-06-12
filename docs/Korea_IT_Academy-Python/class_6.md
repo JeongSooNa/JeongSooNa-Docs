@@ -3,9 +3,20 @@
 ### input
 
 - input() 함수를 통해 사용자로부터 변수의 값을 입력받을 수 있습니다.
+
+- input()으로 입력받은 값은 모두 문자(str)로 인식.
+
 ```py
 name = input()
 print("저의 이름은 " + name + "입니다.")
+```
+
+```py
+apple = input("사과는 몇 개?")
+banana = input("바나나는 몇 개?")
+orange = input("오렌지는 몇 개?")
+sum = int(apple) + int(banana) + int(orange)
+print("과일은 총 " + str(sum) + "개 입니다.")
 ```
 
 ### argv
@@ -50,3 +61,26 @@ main.py --name "나정수" -a 32
 
 
 ### print
+
+- pen pineapple apple pen 출력해보기
+```py
+print("pen pineapple apple pen")
+print("pen""pineapple""apple""pen")
+print("pen","pineapple","apple","pen")
+print("pen"+"pineapple"+"apple"+"pen")
+
+print("pen")
+print("pineapple")
+print("apple")
+print("pen")
+
+print("pen", end=' ')
+print("pineapple", end=' ')
+print("apple", end=' ')
+print("pen", end=' ')
+
+print("pen", end='\n')
+print("pineapple", end='\n')
+print("apple", end='\n')
+print("pen", end='\n')
+```
