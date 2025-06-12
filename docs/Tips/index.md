@@ -25,6 +25,28 @@ git config user.email __github_이메일__
 - Pull : 다른 수정 된 내용을 불러오기
 - Fork : Repository 복제 (주로 다른 유저의 Repository를 복제하여 본인이 사용하기 위해 사용, 라이센스 등 확인)
 
+- VS Code를 활용한 Github 연동 및 Repository 관리
+    1. VSCode에 Git 설치 및 설정:
+        - VSCode에서 Git을 사용하려면 먼저 Git을 설치해야 합니다. 
+        - Git을 설치한 후, VSCode에서 Git을 설정합니다. 
+        - Git 설정에서 사용자 이름과 이메일을 입력합니다. 
+    2. GitHub 계정 생성 및 VSCode 확장 프로그램 설치:
+        - GitHub 계정을 생성합니다.
+        - VSCode에서 GitHub 확장 프로그램을 설치합니다.
+        - GitHub 확장 프로그램이 설치되면, VSCode에서 GitHub 계정에 로그인합니다. 
+    3. VSCode에서 GitHub 저장소 클론 및 푸시:
+        - VSCode에서 터미널을 열고, 다음 명령어를 입력하여 GitHub 저장소를 로컬에 클론합니다.
+        - ```git clone <GitHub 저장소 URL>```
+    4. VSCode를 통해 GitHub에 코드 업로드: 
+        - VSCode의 소스 제어 뷰(왼쪽에서 세 번째 아이콘)를 사용하여 파일을 변경합니다. 
+        - 변경사항 위의 칸에 커밋 메세지를 입력하고 커밋 버튼을 눌러 커밋합니다. 
+        - Sync Changes 버튼을 눌러 GitHub에 푸시합니다. 
+
+### Markdown
+마크다운(Markdown)이란 텍스트 기반의 언어로, 쉽게 쓰고 읽을 수 있습니다.  
+특수기호와 문자를 이용하여 매우 간단한 구조의 문법을 사용하여 보다 빠르게 컨텐츠를 작성하고, 직관적으로 인식할 수 있습니다.  
+
+- [참조 및 사용법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 
 ### 개발자를 위한 프로그래밍 역량 강화
 환경 설정, 기본적인 문법 숙지가 충분하다면 실무에 가까운 경험을 위한 프로젝트 진행을 권장합니다.  
