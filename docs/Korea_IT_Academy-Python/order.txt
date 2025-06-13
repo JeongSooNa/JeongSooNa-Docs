@@ -1,0 +1,4 @@
+id  menu    price
+1   pizza   10$
+2   chicken 15$
+3   hamburger   5$
