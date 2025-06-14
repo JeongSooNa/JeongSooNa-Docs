@@ -3,12 +3,14 @@
 업무 및 학습에 필요한 문서 정리
 
 ### 소개
+
 <center>
 안녕하세요.<br>
 일단 배우고 보는 나정수입니다.
 </center>
 
 ##### 약력
+
 - 충북대학교 정보통계학 전공
 - 통계인재개발원 SAS 초·중 ·고급 프로그래밍 과정 보조강사
 - DW 아카데미 웹·앱 UI/UX 과정 수료
@@ -17,11 +19,13 @@
 - (재직중) 코리아 IT 아카데미 ADsP 자격시험 대비 / 파이썬 기초 프로그래밍 강사
 
 ##### 자격
+
 - ADsP 데이터 분석 준전문가
 - SQLD SQL개발자
 - 사회조사분석사
 
 ##### 기술
+
 - Python 알고리즘, 백앤드, Linux 시스템 제어 개발
 - R 시각화, 데이터 분석
 - SAS, SPSS 통계분석 프로그래밍
@@ -31,6 +35,7 @@
 - 네트워크 구축
 
 ##### 관련 링크
+
 - [Github](https://github.com/JeongSooNa)
 - [JS Portfolio](https://jeongsoona.github.io/)
 - [JS Docs](https://jeongsoona-docs.readthedocs.io/)
@@ -53,9 +58,10 @@ Korea_IT_Academy-Python/class_5.md
 Korea_IT_Academy-Python/class_6.md
 Korea_IT_Academy-Python/class_7.md
 Korea_IT_Academy-Python/class_8.md
-```
-<!-- 
 Korea_IT_Academy-Python/class_9.md
+```
+
+<!--
 Korea_IT_Academy-Python/class_10.md
 Korea_IT_Academy-Python/class_11.md
 Korea_IT_Academy-Python/class_12.md
