@@ -59,10 +59,10 @@ Korea_IT_Academy-Python/class_6.md
 Korea_IT_Academy-Python/class_7.md
 Korea_IT_Academy-Python/class_8.md
 Korea_IT_Academy-Python/class_9.md
+Korea_IT_Academy-Python/class_10.md
 ```
 
 <!--
-Korea_IT_Academy-Python/class_10.md
 Korea_IT_Academy-Python/class_11.md
 Korea_IT_Academy-Python/class_12.md
 Korea_IT_Academy-Python/class_13.md
