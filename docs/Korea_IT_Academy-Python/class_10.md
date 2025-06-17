@@ -68,7 +68,7 @@ sys.exit()
 ```
 
 ### numpy
-Numpy란 Python 연산을 위한 기본적인 패키지 중 하나입니다.  
+Numpy란 Python 연산을 위한 기본적인 라이브러리 중 하나입니다.  
 Numeric Python의 약자로 대규모 데이터, 배열과 행렬 연산 등에 필요한 다양한 함수를 제공합니다.
 
 - 설치
@@ -76,7 +76,7 @@ Numeric Python의 약자로 대규모 데이터, 배열과 행렬 연산 등에 
 pip install numpy
 ```
 
-- import
+- Import
 ```py
 # 다수의 프로젝트 및 실무에서 np라는 약어로 numpy를 사용합니다.
 import numpy as np
@@ -181,3 +181,46 @@ b, c = np.split(a, [1], axis=0)  # [[1, 2, 3]], [[4, 5, 6]]
     - np.random.uniform() : 균등(0,1)에서 표본을 추출
 
 ###  pandas
+pandas란 파이썬 데이터 분석 라이브러리로, 데이터 핸들링, 분석, 시각화 등 다양한 기능을 제공합니다.  
+기본적으로 시리즈(Series)와 데이터프레임(DataFrame) 자료형을 사용하여 데이터를 처리합니다.
+
+- 설치
+```py
+pip install pandas
+```
+
+- Import
+```py
+# 다수의 프로젝트 및 실무에서 pd라는 약어로 pandas를 사용합니다.
+import pandas as pd
+```
+
+- DataFrame : 행과 열로 이루어진 2차원 데이터로, 열은 변수, 행은 관측치를 나타냅니다.
+
+- DataFrame 생성
+```py
+# list > DataFrame
+data = [['a',10],['b',20],['c',30]]
+df = pd.DataFrame(data, columns=['name', 'age'])
+print(df)
+
+# dictionary > DataFrame
+data = {'name':['a','b','c'],'age':[10,20,30]}
+df = pd.DataFrame(data)
+print(df)
+```
+
+- CSV 파일을 사용한 DataFrame 생성
+- data.csv
+```
+name    age
+a   1
+b   2
+c   3
+```
+```py
+df = pd.read_csv('data.csv')
+print(df)
+```
+
+### UPDATING...
