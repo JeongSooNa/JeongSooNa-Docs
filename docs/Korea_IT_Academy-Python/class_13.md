@@ -1,4 +1,4 @@
-# Class 13 - Python 예외처리
+# Class 13 - 예외처리
 
 ### try & except
 try문 수행 중 오류가 발생하지 않는다면 except문은 수행되지 않는 구조.
@@ -25,7 +25,9 @@ except ZeroDivisionError as e:
     print(e)
 ```
 
-### 예외 종류
+### Error 종류
+Error 발생 시 출력되는 에러 메세지를 확인 후 에러 종류에 따라 해결 방법을 쉽게 얻을 수 있다.  
+
 - TypeError: 연산 또는 함수가 적절하지 않은 유형의 객체에 적용될 때 발생
     ```py
     "a" + 1
