@@ -14,7 +14,15 @@ time()
 외부 라이브러리의 경우 설치가 필요한 경우로 이때 주로 pip을 사용한다.
 
 ```bash
+# pip 설치 확인
+pip --version
+python -m pip --version
+# pip update
+pip install --upgrade pip
+python -m pip install --upgrade pip
 
+# 아래 명령어로 원하는 Python 패키지 설치
+# pip install _package_name__
 ```
 
 ### os
