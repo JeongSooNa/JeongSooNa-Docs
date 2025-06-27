@@ -63,11 +63,11 @@ Korea_IT_Academy-Python/class_10.md
 Korea_IT_Academy-Python/class_11.md
 Korea_IT_Academy-Python/class_12.md
 Korea_IT_Academy-Python/class_13.md
+Korea_IT_Academy-Python/class_14.md
 Korea_IT_Academy-Python/Algorithm_study-sorting.md
 ```
 
 <!--
-Korea_IT_Academy-Python/class_14.md
 Korea_IT_Academy-Python/class_15.md
 Korea_IT_Academy-Python/test_1.md
 Korea_IT_Academy-Python/test_2.md
