@@ -64,6 +64,7 @@ Korea_IT_Academy-Python/class_11.md
 Korea_IT_Academy-Python/class_12.md
 Korea_IT_Academy-Python/class_13.md
 Korea_IT_Academy-Python/class_14.md
+Korea_IT_Academy-Python/Algorithm_study-basic.md
 Korea_IT_Academy-Python/Algorithm_study-sorting.md
 ```
 
