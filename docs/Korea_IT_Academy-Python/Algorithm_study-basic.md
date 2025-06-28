@@ -6,7 +6,6 @@
 array = [1,4,5,7,8,9,12,15]
 ```
 
-<!--
 ```py
 sum = 0
 for i in array:
@@ -14,7 +13,6 @@ for i in array:
         sum += i
 print(sum)
 ```
--->
 
 ### 다음 문자열 내에서 주어진 문자열 인덱스에 해당하는 문자를 차례로 조합해 단어를 완성하시오.
 
@@ -22,14 +20,13 @@ print(sum)
 string = "zpiaz"
 index_list = [1,2,0,0,3]
 ```
-<!--
+
 ```py
 result = ""
 for i in index_list:
     result += string[i]
 print(result)
 ```
--->
 
 ### 구구단을 출력하시오.
 
