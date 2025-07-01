@@ -21,6 +21,19 @@
 
 #### 문제 풀이
 
+```py
+### Updating...
+def solution(babbling):
+    answer = 0
+    s = ["aya", "ye", "woo", "ma"]
+    for i in babbling:
+        tmp = i
+        tmp.replace("aya","")
+        while 1:
+            break
+        print(tmp)
+    return answer
+```
 
 #### Issue
 
