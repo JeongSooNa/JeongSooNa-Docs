@@ -30,10 +30,30 @@ print(result)
 
 ### 구구단을 출력하시오.
 
-<!--
 ```py
 for i in range(2,10):
     for j in range(1,10):
         print(str(i) + " x " + str(j) + " = " + str(i*j))
+```
+
+### 입력값(input)을 리스트로 받았을 때 제곱합을 반환(return)하는 함수를 작성하시오.
+- input
+```py
+input = [1,2,3,4,5]
+```
+- function
+<!--
+```py
+import math
+def sumsq(a):
+    result = 0
+    for i in a:
+        # 방법 1
+        result += i * i
+        # 방법 2
+        #result += pow(i,2)
+        # 방법 3
+        #result += math.pow(i,2)
+    return result
 ```
 -->
