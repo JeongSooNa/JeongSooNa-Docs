@@ -1,4 +1,4 @@
-# Algorithm Study - Programmers
+# Algorithm Study - Programmers 0단계 - 2
 
 ### 옷가게 할인 받기
 
@@ -133,6 +133,70 @@ def solution(score):
     return answer
 ```
 -->
+
+### 연속된 수의 합
+
+- 문제 설명
+
+연속된 세 개의 정수를 더해 12가 되는 경우는 3, 4, 5입니다. 두 정수 num과 total이 주어집니다. 연속된 수 num개를 더한 값이 total이 될 때, 정수 배열을 오름차순으로 담아 return하도록 solution함수를 완성해보세요.
+
+- 제한사항
+    - 1 ≤ num ≤ 100
+    - 0 ≤ total ≤ 1000
+    - num개의 연속된 수를 더하여 total이 될 수 없는 테스트 케이스는 없습니다.
+
+- 입출력 예 
+    - num = 3, total = 12인 경우 [3, 4, 5]를 return합니다.
+    - num = 5, total = 15인 경우 [1, 2, 3, 4, 5]를 return합니다.
+    - 4개의 연속된 수를 더해 14가 되는 경우는 2, 3, 4, 5입니다.
+
+- 문제 풀이
+
+<!--
+```py
+def solution(num, total):
+    answer = []
+    sum = 0
+    for i in range(num):
+        sum += i
+    for i in range(num):
+        answer.append((total-sum)/num + i)
+    return answer
+```
+-->
+
+### 직사각형 넓이 구하기
+
+- 문제 설명
+
+2차원 좌표 평면에 변이 축과 평행한 직사각형이 있습니다. 직사각형 네 꼭짓점의 좌표 [[x1, y1], [x2, y2], [x3, y3], [x4, y4]]가 담겨있는 배열 dots가 매개변수로 주어질 때, 직사각형의 넓이를 return 하도록 solution 함수를 완성해보세요.
+
+- 제한사항
+    - dots의 길이 = 4
+    - dots의 원소의 길이 = 2
+    - -256 < dots[i]의 원소 < 256
+    - 잘못된 입력은 주어지지 않습니다.
+
+- 입출력 예
+    - 좌표 [[1, 1], [2, 1], [2, 2], [1, 2]] 를 꼭짓점으로 갖는 직사각형의 가로, 세로 길이는 각각 1, 1이므로 직사각형의 넓이는 1 x 1 = 1입니다.
+    - 좌표 [[-1, -1], [1, 1], [1, -1], [-1, 1]]를 꼭짓점으로 갖는 직사각형의 가로, 세로 길이는 각각 2, 2이므로 직사각형의 넓이는 2 x 2 = 4입니다.
+
+- 문제 풀이
+
+<!--
+```py
+def solution(dots):
+    a1 = ((dots[0][0]-dots[1][0])**2+(dots[0][1]-dots[1][1])**2)**0.5
+    a2 = ((dots[0][0]-dots[2][0])**2+(dots[0][1]-dots[2][1])**2)**0.5
+    a3 = ((dots[0][0]-dots[3][0])**2+(dots[0][1]-dots[3][1])**2)**0.5
+    max = 0
+    for i in [a1,a2,a3]:
+        if max < i:
+            max = i
+    return a1*a2*a3/max
+```
+-->
+
 
 ### 옹알이 (1)
 
