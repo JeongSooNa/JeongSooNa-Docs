@@ -64,18 +64,17 @@ Korea_IT_Academy-Python/class_11.md
 Korea_IT_Academy-Python/class_12.md
 Korea_IT_Academy-Python/class_13.md
 Korea_IT_Academy-Python/class_14.md
+Korea_IT_Academy-Python/class_15.md
 Korea_IT_Academy-Python/Algorithm_study-basic.md
 Korea_IT_Academy-Python/Algorithm_study-sorting.md
 ```
 
 <!--
-Korea_IT_Academy-Python/class_15.md
 Korea_IT_Academy-Python/test_1.md
 Korea_IT_Academy-Python/test_2.md
 Korea_IT_Academy-Python/test_3.md
 -->
 
-<!--
 ```{toctree}
 :maxdepth: 2
 :caption: Korea IT Academy - ADsP
@@ -83,7 +82,6 @@ Korea_IT_Academy-Python/test_3.md
 Korea_IT_Academy-ADsP/index.md
 Korea_IT_Academy-ADsP/class_1.md
 ```
--->
 
 ```{toctree}
 :maxdepth: 2
