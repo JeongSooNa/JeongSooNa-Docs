@@ -1,11 +1,12 @@
 # Algorithm Study - Basic
 
 ### 다음 주어진 리스트에서 홀수만 전부 더하시오.
-
+- input
 ```py
 array = [1,4,5,7,8,9,12,15]
 ```
 
+- 문제 풀이
 ```py
 sum = 0
 for i in array:
@@ -15,12 +16,13 @@ print(sum)
 ```
 
 ### 다음 문자열 내에서 주어진 문자열 인덱스에 해당하는 문자를 차례로 조합해 단어를 완성하시오.
-
+- input
 ```py
 string = "zpiaz"
 index_list = [1,2,0,0,3]
 ```
 
+- 문제 풀이
 ```py
 result = ""
 for i in index_list:
@@ -30,6 +32,7 @@ print(result)
 
 ### 구구단을 출력하시오.
 
+- 문제 풀이
 ```py
 for i in range(2,10):
     for j in range(1,10):
@@ -41,7 +44,7 @@ for i in range(2,10):
 ```py
 input = [1,2,3,4,5]
 ```
-- function
+- 문제 풀이
 <!--
 ```py
 import math
@@ -55,5 +58,19 @@ def sumsq(a):
         # 방법 3
         #result += math.pow(i,2)
     return result
+```
+-->
+
+### 모음 제거
+- 모음
+    - "a","e","i","o","u"
+
+- 문제 풀이
+<!--
+```py
+def solution(my_string):
+    for i in ["a","e","i","o","u"]:
+        my_string = my_string.replace(i,"")
+    return my_string
 ```
 -->
