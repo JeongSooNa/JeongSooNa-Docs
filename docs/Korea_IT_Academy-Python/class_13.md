@@ -1,4 +1,4 @@
-# Class 13 - 예외처리
+# Class 13 - Python 예외처리
 
 ### try & except
 try문 수행 중 오류가 발생하지 않는다면 except문은 수행되지 않는 구조.
