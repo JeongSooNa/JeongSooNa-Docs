@@ -22,9 +22,7 @@ def solution(my_string):
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(n, t):
     return n*(2**t)
 ```
--->
