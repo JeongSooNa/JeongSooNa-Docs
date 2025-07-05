@@ -51,7 +51,6 @@ def solution(price):
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(num_list):
     if len(num_list)%2 == 0:
@@ -66,7 +65,6 @@ def solution(num_list):
             num_list[-(i+1)] = tmp
     return num_list
 ```
--->
 
 ### 다음에 올 숫자
 
