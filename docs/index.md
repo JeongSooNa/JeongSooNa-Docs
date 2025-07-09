@@ -85,6 +85,7 @@ Korea_IT_Academy-Python/test_3.md
 
 Korea_IT_Academy-ADsP/index.md
 Korea_IT_Academy-ADsP/class_1.md
+Korea_IT_Academy-ADsP/class_2.md
 ```
 
 ```{toctree}
