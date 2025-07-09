@@ -89,3 +89,67 @@ git config user.email __github_이메일__
         - 개발부터 배포까지 웹으로 가능한 서비스입니다.
     - [CodePen](https://codepen.io/)
         - 주로 프론트앤드 결과물 확인에 적합하며, 다양한 웹 디자인을 가져오고, 수정할 수 있습니다.
+
+
+### Python TIPS
+
+1. ```import *``` 사용을 자재
+    - ```from __ import *``` 로 모든 모듈을 불러오는 경우
+    - 가동 시간이 길다.
+    - 변수명끼리 충돌 현상이 일어날 수 있다.
+
+2. ```except```절의 정확한 Error 명시
+    - 특정 예외를 지정함으로써 프로그램 중지를 방지하고 효율적인 자원관리를 할 수 있다.
+
+3. 수학 계산에 ```numpy``` 사용
+    - 수학 연산에 있어 for 루프보다 더 빠른 연산 속도를 보여줌. (작업을 벡터화하기 때문)
+    - 간단한 연산은 그냥 구현하면 되지만 계산량이 많아지거나 복잡한 경우 ```numpy```를 사용하는 것을 권장.
+
+4. 불러온 파일을 닫는 습관
+    - ```open```을 사용해 외부 파일을 불러온 경우 ```close```를 사용해 닫아주는 것이 좋다.
+    - ```write``` ```read```를 사용할 경우 예외가 발생할 경우 열린 파일이 닫히지 않을 수 있기 때문
+
+5. PRP8의 가이드라인을 벗어나지 않도록
+    - 이해하기 쉬운 변수명을 사용
+    - 코드 작성에 최적의 가이드라인을 따라 클린코드를 작성
+
+6. 딕셔너리를 사용할 때 ```.keys```와 ```.values```를 적절히 사용할 것
+    - ```for``` 루프에서 딕셔너리를 반복하는 것 만으로도 key값을 얻을 수 있다.
+
+    ```py
+    for key in dict.keys():
+        print(key)
+    ```
+
+    - ```.ietm()```을 사용해 value값을 얻을 수 있다.
+
+7. 컴프리헨션(comprehension)을 적절히 사용
+    - ```for```루프를 사용하는 것 대신 컴프리헨션으로 단단히 처리할 수 있다.
+
+    ```py
+    a = ['a','b','c']
+    b = []
+
+    # for 사용
+    for i in a:
+        b.append(i.lower())
+
+    # Using comprehension
+    b = [i.lower() for i in a]
+    ```
+
+8. range(len()) 사용을 자제
+    - 실제 프로그래밍 시 ```range(len())```을 사용하는 것 보다 enumerate나 zip을 사용해 리스트를 효율적으로 사용할 수 있다.
+    
+    ```py
+    for i,j in enumerate(data_list):
+        print(i,j) # list의 index와 요소를 함께 사용
+    for i,j in zip(list_1,list_2):
+        print(i,j) # 여러 개의 list의 인자를 동시에 가져오기
+    ```
+
+9. 출력 시 + 연산자보다 f-string을 권장
+
+10. Mutable value를 디폴트 매개변수로 사용 시 주의
+
+- Reference : [파이썬 초보자가 저지르는 10가지 실수](https://yozm.wishket.com/magazine/detail/1605/)
