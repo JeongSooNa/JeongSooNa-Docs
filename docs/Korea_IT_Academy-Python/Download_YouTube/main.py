@@ -1,5 +1,6 @@
 import yt_dlp
 
+# download video function
 def download_video(url, output_path='videos'):
     ydl_opts = {
         'format': 'bestvideo+bestaudio/best',
