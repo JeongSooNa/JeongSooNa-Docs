@@ -99,6 +99,14 @@ else:
 - 평균
 
 ```py
+sum = 0
+for i in range(len(df)):
+    sum += int(df.iloc[i]['허가병상수'])
+print(sum/len(df))
+print(int(sum/len(df)))
+```
+
+```py
 df['허가병상수'] = pd.to_numeric(df['허가병상수'])  # str > int
 avg = df['허가병상수'].mean()
 print(avg)
