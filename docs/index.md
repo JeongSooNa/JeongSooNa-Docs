@@ -70,6 +70,7 @@ Korea_IT_Academy-Python/Algorithm_study-sorting.md
 Korea_IT_Academy-Python/Algorithm_study-Programmers_0-1.md
 Korea_IT_Academy-Python/Algorithm_study-Programmers_0-2.md
 Korea_IT_Academy-Python/Algorithm_study-Programmers_1.md
+Korea_IT_Academy-Python/Data_Analysis_1.md
 Korea_IT_Academy-Python/python_project.md
 ```
 
