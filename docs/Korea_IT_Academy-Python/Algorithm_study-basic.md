@@ -55,7 +55,6 @@ input = [1,2,3,4,5]
 ```
 
 - 문제 풀이
-<!--
 
 ```py
 import math
@@ -70,5 +69,3 @@ def sumsq(a):
         #result += math.pow(i,2)
     return result
 ```
-
--->

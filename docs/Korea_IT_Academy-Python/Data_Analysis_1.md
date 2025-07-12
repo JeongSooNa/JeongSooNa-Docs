@@ -32,20 +32,22 @@ df = pd.read_csv('전라남도_응급의료기관현황_20250709.csv', encoding=
 print(df)
 ```
 
-<!--
 ### 병원명 입력 시 전화번호 및 정보 제공(print) 구현
 
 - 데이터 확인
+
 ```py
 df[['병원명','응급실 대표전화']]
 ```
 
 - 병원명 입력
+
 ```py
 name = input("병원명을 입력하시오\n")
 ```
 
 - 데이터 출력
+
 ```py
 if name in df['병원명'].values:
     info = df[df['병원명'] == name][['병원명', '응급실 대표전화', '세부주소', '허가병상수']]
@@ -66,11 +68,13 @@ print(a['병원명'])
 ### input()함수를 활용한 병원명 검색 기능 구현
 
 - 병원명 입력
+
 ```py
 name = input("병원명을 입력하시오\n")
 ```
 
 - 검색 기능
+
 ```py
 for i in range(len(df)):
     hospital_name = df.iloc[i]['병원명']
@@ -79,6 +83,7 @@ for i in range(len(df)):
 ```
 
 - 심화 : pandas 내 문자열 포함 확인 함수 사용
+
 ```py
 result = df[df['병원명'].str.contains(name, case=False, na=False)]
 
@@ -92,6 +97,7 @@ else:
 ### 허가병상수 데이터 기반 평균 계산 및 상위 5개 병원 출력
 
 - 평균
+
 ```py
 df['허가병상수'] = pd.to_numeric(df['허가병상수'])  # str > int
 avg = df['허가병상수'].mean()
@@ -100,10 +106,27 @@ print(int(avg))
 ```
 
 - 허가병상수 상위 5개 병원
+
+```py
+top5 = []
+
+for i in range(5):
+    max = 0
+    max_index = 0
+    for j in range(len(df)):
+        # if int(df.iloc[j]['허가병상수']) in top5:
+        #     continue
+        if j in top5:
+            continue
+        if max < int(df.iloc[j]['허가병상수']):
+            max = int(df.iloc[j]['허가병상수'])
+            max_index = j
+    top5.append(max_index)
+print(top5)
+```
+
 ```py
 top5 = df.sort_values(by='허가병상수', ascending=False).head(5)
 print("***허가병상수 상위 5개 병원")
 print(top5[['병원명', '허가병상수']])
 ```
-
--->
