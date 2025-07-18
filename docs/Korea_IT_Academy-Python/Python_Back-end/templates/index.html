@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Flask Back-end Web Developments</title>
+</head>
+<body>
+  <!-- 입력란 -->
+  <input id="input_data" type="text" />
+  <!-- 전송 버튼 -->
+  <button onclick="send()">전송</button>
+  <!-- 파이썬에서 가져온 데이터를 출력 할 영역 -->
+  <div id="result"></div>
+
+  <script>
+    // 버튼 클릭 시 작동 함수
+    function send() {
+      // data 변수 선언
+      const data = new FormData();
+      // id input_data를 data에 저장
+      data.append('input_data', document.getElementById('input_data').value);
+      // /data 에 input_data를 전송하여 python 서버로 전달
+      fetch('/data', {
+        method: 'POST', // POST method로 전송
+        body: data
+      })
+      .then(response => response.text()) // 서버 응답 시 text로 처리
+      .then(text => {
+        document.getElementById('result').innerHTML = text; // 전달 받은 데이터를 id result에 넣기
+      });
+    }
+  </script>
+</body>
+</html>

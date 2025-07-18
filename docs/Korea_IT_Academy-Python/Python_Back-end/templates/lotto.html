@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto</title>
+</head>
+<body>
+  <h1>로또 번호를 추천합니다.</h1>
+  <button onclick="run()">추첨</button>
+  <div id="result"></div>
+
+  <script>
+    function run() {
+      fetch('/lotto_data')
+        .then(response => response.text())
+        .then(text => {
+          document.getElementById('result').innerHTML = text;
+        });
+    }
+  </script>
+</body>
+</html>
