@@ -71,6 +71,7 @@ Korea_IT_Academy-Python/Algorithm_study-Programmers_0-1.md
 Korea_IT_Academy-Python/Algorithm_study-Programmers_0-2.md
 Korea_IT_Academy-Python/Algorithm_study-Programmers_1.md
 Korea_IT_Academy-Python/Data_Analysis_1.md
+Korea_IT_Academy-Python/Data_Analysis_2.md
 Korea_IT_Academy-Python/python_back-end.md
 Korea_IT_Academy-Python/python_crawling.md
 Korea_IT_Academy-Python/python_project.md
