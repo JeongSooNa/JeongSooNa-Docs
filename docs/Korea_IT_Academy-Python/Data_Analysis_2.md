@@ -82,3 +82,44 @@ final_kcal = int(result_kcal)*int(input_weight)/100
 print("검색한 음식의 100g당 열량은",result_kcal,"kcal 이며,")
 print("입력하신 ",input_weight,"g 의 총 열량은",final_kcal,"kcal 입니다.")
 ```
+
+### 최종
+
+```py
+# 선택한 음식의 칼로리가 상위 몇 %에 해당하는 열량일까?
+
+input_food = input("정보를 알고싶은 음식명을 입력하세요 : ")
+
+search_info = df[df['식품명'].str.contains(input_food)][['식품명', '에너지(kcal)']]
+
+for i in range(len(search_info)):
+    #print("index:", search_info.index[i])
+    print("index:", i)
+    print("식품명:", search_info.iloc[i]['식품명'])
+    # print("에너지(kcal):", search_info.iloc[i]['에너지(kcal)'])
+    print("---")
+
+input_index = input("선택 할 식품의 index를 입력하세요 : ")
+result_kcal = search_info.iloc[int(input_index)]['에너지(kcal)']
+
+result = search_info.iloc[int(input_index)]
+
+print(result.name)
+
+df_sorted = df.sort_values("에너지(kcal)")
+df_sorted[["식품명","에너지(kcal)"]]
+
+cnt = 0
+
+for i in range(len(df_sorted)):
+    #print(df_sorted.iloc[i].name)
+    #print(df_sorted.iloc[i]['식품명'])
+    #print(df_sorted.iloc[i]['에너지(kcal)'])
+    if result.name == df_sorted.iloc[i].name:
+        break
+    cnt += 1
+print(cnt)
+print(cnt/148584*100,"%")
+# 14584개의 데이터
+
+```
