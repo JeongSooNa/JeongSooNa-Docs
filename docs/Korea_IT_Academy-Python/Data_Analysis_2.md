@@ -12,7 +12,6 @@
 
 - 자료 출처 : [식품의약품안전처 식품영양성분 데이터베이스 - 영양성분 DB 내려받기](https://various.foodsafetykorea.go.kr/nutrient/general/down/historyList.do)
 
-
 - 데이터 불러오기
 
 ```py
@@ -50,12 +49,19 @@ input_food = input("정보를 알고싶은 음식명을 입력하세요 : ")
 df[df['식품명'].str.contains(input_food)][['식품코드','식품명','식품대분류명','대표식품명','에너지(kcal)']]
 ```
 
+### 데이터 열량 별 정렬
+
+```py
+df_sorted = df.sort_values("에너지(kcal)")
+df_sorted[["식품명","에너지(kcal)"]]
+```
+
 ### 열량구하기
 
 - 입력받을 input
-    - input_food : 정보를 알고 싶은 음식명 검색
-    - input_index : 입력한 음식명을 포함한 전체 리스트 중 선택할 index
-    - input_weight : 최종 선택 한 음식의 열량을 구할 g 무게 입력
+  - input_food : 정보를 알고 싶은 음식명 검색
+  - input_index : 입력한 음식명을 포함한 전체 리스트 중 선택할 index
+  - input_weight : 최종 선택 한 음식의 열량을 구할 g 무게 입력
 
 ```py
 input_food = input("정보를 알고싶은 음식명을 입력하세요 : ")
@@ -63,7 +69,8 @@ input_food = input("정보를 알고싶은 음식명을 입력하세요 : ")
 search_info = df[df['식품명'].str.contains(input_food)][['식품명', '에너지(kcal)']]
 
 for i in range(len(search_info)):
-    print("index:", search_info.index[i])
+    #print("index:", search_info.index[i])
+    print("index:", i)
     print("식품명:", search_info.iloc[i]['식품명'])
     # print("에너지(kcal):", search_info.iloc[i]['에너지(kcal)'])
     print("---")
