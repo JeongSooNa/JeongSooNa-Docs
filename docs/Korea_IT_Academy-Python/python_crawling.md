@@ -162,6 +162,9 @@ from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import time
+import sys
+
+input_text = sys.argv[1]
 
 # 크롬 제어 변수 선언
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -176,7 +179,7 @@ driver.get("https://www.naver.com")
 search_box = driver.find_element(By.CSS_SELECTOR, "input#query.search_input")
 
 # 검색어 입력
-search_box.send_keys("재생에너지")
+search_box.send_keys(input_text)
 
 # 검색 실행(enter)
 search_box.send_keys(Keys.ENTER)
