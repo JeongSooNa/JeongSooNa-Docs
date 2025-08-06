@@ -1,4 +1,4 @@
-# Hello JS!
+# Hello JS
 
 업무 및 학습에 필요한 문서 정리
 
@@ -15,8 +15,14 @@
 - 통계인재개발원 SAS 초·중 ·고급 프로그래밍 과정 보조강사
 - DW 아카데미 웹·앱 UI/UX 과정 수료
 - ㈜ 신테카바이오 AI신약개발전략기획팀 주임연구원
-- (재직중) ㈜ 마루이엔지 시스템 관리 및 개발 주임
-- (재직중) 코리아 IT 아카데미 ADsP 자격시험 대비 / 파이썬 기초 프로그래밍 강사
+- (재직중) ㈜ 마루이엔지 FA팀/주임
+    - 서버 인프라 및 시스템 관리 (Linux)
+    - 백업 및 모니터링 자동화 프로그램 개발 및 운영 (Python)
+- (재직중) 코리아 IT 아카데미 강사
+    - ADsP 자격시험 대비
+    - 서원대학교 ADsP 자격 대비 위탁 교육
+    - 파이썬 기초 프로그래밍
+    - R 데이터 분석
 
 ##### 자격
 
@@ -43,6 +49,12 @@
 ---
 
 ### 목차
+
+```{toctree}
+:maxdepth: 1
+
+index.md
+```
 
 ```{toctree}
 :maxdepth: 2
@@ -77,19 +89,11 @@ Korea_IT_Academy-Python/python_crawling.md
 Korea_IT_Academy-Python/python_project.md
 ```
 
-<!--
-Korea_IT_Academy-Python/test_1.md
-Korea_IT_Academy-Python/test_2.md
-Korea_IT_Academy-Python/test_3.md
--->
-
 ```{toctree}
 :maxdepth: 2
 :caption: Korea IT Academy - ADsP
 
 Korea_IT_Academy-ADsP/index.md
-Korea_IT_Academy-ADsP/class_1.md
-Korea_IT_Academy-ADsP/class_2.md
 ```
 
 ```{toctree}
