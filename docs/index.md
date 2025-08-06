@@ -91,14 +91,14 @@ Korea_IT_Academy-Python/python_project.md
 :maxdepth: 2
 :caption: Korea IT Academy - ADsP
 
-Korea_IT_Academy-DA/index.md
+Korea_IT_Academy-ADsP/index.md
 ```
 
 ```{toctree}
 :maxdepth: 2
 :caption: Korea IT Academy - DA
 
-Korea_IT_Academy-ADsP/index.md
+Korea_IT_Academy-DA/index.md
 ```
 
 ```{toctree}
