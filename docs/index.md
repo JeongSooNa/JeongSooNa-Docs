@@ -99,6 +99,8 @@ Korea_IT_Academy-ADsP/index.md
 :caption: Korea IT Academy - DA
 
 Korea_IT_Academy-DA/index.md
+Korea_IT_Academy-DA/class_0.md
+Korea_IT_Academy-DA/class_1.md
 ```
 
 ```{toctree}
