@@ -62,69 +62,106 @@ class(FALSE)
 class(NA) # 공간을 차지하는 결측값
 class(NULL) # 공간을 차지하지 않는 결측값
 ```
+- 타입 확인을 통해 True/False로 반환하는 is. 함수를 사용할 수 있다.
+```r
+is.character(a)
+is.numeric(b)
+is.logical(d)
+is.na(e)
+is.null(f)
+```
 
 ### 연산자
+
+- 대입 연산자(<<-, = 도 사용 가능)
 ```r
-a <- "ADsP" # 대입 연산자 (<<-, = 도 사용 가능)
+a <- "ADsP"
 a = "hello"
 b <- 1
 c <- 2
 d <- TRUE
 e <- NA
 f <- NULL
-a
-a == "ADsP" # 비교 연산자 (==,<,>,!=,<=,>=)
-a
-b
-c
-d
-e
-f
-is.character(a)
-is.numeric(b)
-is.logical(d)
-is.na(e)
-is.null(f)
-b+c # 산술 연산자 (+,-,*,/)
+```
+
+- 비교 연산자 (==,<,>,!=,<=,>=)
+    - 연산 결과는 True/False로 반환된다.
+```r
+a == "ADsP"
+b < c
+b >= c
+```
+
+- 산술 연산자 (+,-,*,/)
+```r
+b+c
 b/c
 7/3
 7%/%3 # 몫
 7%%3 # 나머지
-2**2 # 제곱 (^ 도 사용 가능)
-2^2
-3^2
-TRUE&FALSE # ! : Not , & : And , | : Or
+2**3 # 제곱 (^ 도 사용 가능)
+2^3
+```
+
+- 논리 연산자
+    - Not(!)
+    - And(&)
+    - Or(|)
+```r
+TRUE&FALSE 
 1<2|1>2
 F&F
 FALSE|FALSE
+!TRUE
 ```
 
 ### 벡터
-v1 <- c(1,2,3,4) # concatenate
-v1[4]
+
+- Combine function으로 요소 간 콤마(,)로 구분하여 여러 데이터를 묶은 자료형
+```r
+v1 <- c(1,2,3,4)
+v1
 v2 <- c(1,"ADsP",TRUE)
 v2
-
-class(v2[1])
-
 v3 <- c(1:6)
 v3
+```
 
-### 행렬
+- 인덱싱 : 벡터의 요소를 선택
+```r
+v1[1]
+v1[1:3]
+v1[c(1,2,4)]
+class(v2[1])
+```
+
+### 행렬(Matrix)
+
+- 행(row)과 열(column)로 구성 된 2차원 데이터 자료형
+```r
 m1 <- matrix(v3,nrow=2,ncol=3)
 m1
 m2 <- matrix(v3,nrow=2,ncol=3,byrow = TRUE)
 m2
 dim(v3) <- c(2,3)
 v3
+```
 
-### 배열 : 3차원 이상의 데이터 구분
+### 배열(Array)
+
+- 3차원 이상의 데이터 자료형
+```r
 a1 <- c(1:12)
 a1
 a2 <- array(a1,dim = c(2,2,3))
 a2
+```
 
 ### 데이터프레임
+
+- 행렬(Matrix)과 유사하나 row는 data, column은 변수의 개념이 들어간 자료형으로, R 데이터 분석에서 가장 선호되는 데이터 타입.
+
+```r
 d1 <- c(1,2,3,4,5)
 d2 <- c("짱구","철수","유리","맹구","훈이")
 d3 <- c("흰둥이","학원","토끼","돌맹이","주먹밥")
@@ -141,8 +178,12 @@ v3 <- c(7,8,9,10)
 rbind(v1,v2) # 데이터 결합
 cbind(v1,v2)
 rbind(v1,v3) # 재사용 규칙
+```
 
 ### 내장 함수
+
+- 자주 사용하는 내장 함수
+```r
 help()
 help(data.frame)
 history()
@@ -157,22 +198,7 @@ a
 ls()
 print("ADsP")
 print(a1)
-
-### 통계 함수
-v1 <- 1:10
-v1
-
-sum(v1) # summation
-var(v1) # variance
-sd(v1) # standard deviation
-range(v1)
-
-install.packages("fBasics") # R Packages install
-library(fBasics) # Load R Packages
-
-skewness(v1) # 왜도
-kurtosis(v1) # 첨도
-summary(v1)
+```
 
 ### 반복문
 
@@ -283,6 +309,22 @@ v3 <- matrix(c(1:4),nrow = 2,ncol = 2,byrow = T)
 v2
 v3
 v2%*%v3 # 행렬의 곱
+
+### 통계 함수
+v1 <- 1:10
+v1
+
+sum(v1) # summation
+var(v1) # variance
+sd(v1) # standard deviation
+range(v1)
+
+install.packages("fBasics") # R Packages install
+library(fBasics) # Load R Packages
+
+skewness(v1) # 왜도
+kurtosis(v1) # 첨도
+summary(v1)
 
 ### 데이터 탐색
 x <- c(1:12)
