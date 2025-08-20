@@ -62,6 +62,7 @@ class(FALSE)
 class(NA) # 공간을 차지하는 결측값
 class(NULL) # 공간을 차지하지 않는 결측값
 ```
+
 - 타입 확인을 통해 True/False로 반환하는 is. 함수를 사용할 수 있다.
 ```r
 is.character(a)
@@ -127,12 +128,16 @@ v3 <- c(1:6)
 v3
 ```
 
+- 여러 타입의 데이터를 벡터로 묶었을 때
+```r
+class(v2[1])
+```
+
 - 인덱싱 : 벡터의 요소를 선택
 ```r
 v1[1]
 v1[1:3]
 v1[c(1,2,4)]
-class(v2[1])
 ```
 
 ### 행렬(Matrix)
@@ -143,6 +148,10 @@ m1 <- matrix(v3,nrow=2,ncol=3)
 m1
 m2 <- matrix(v3,nrow=2,ncol=3,byrow = TRUE)
 m2
+```
+
+- dim 함수(데이터의 길이를 확인, 할당)를 사용해 행렬을 생성할 수 있다.
+```r
 dim(v3) <- c(2,3)
 v3
 ```
@@ -167,15 +176,22 @@ d2 <- c("짱구","철수","유리","맹구","훈이")
 d3 <- c("흰둥이","학원","토끼","돌맹이","주먹밥")
 df1 <- data.frame(d1,d2,d3)
 df1
+```
+
+- 인덱싱
+```r
 df1[2]
-df1[,2] # 데이터 추출
+df1[,2]
 df1[,1]
 df1[4,3]
+```
 
+- rbind, cbind를 사용해 데이터프레임을 생성할 수 있다.
+```r
 v1 <- c(1,2,3) 
 v2 <- c(4,5,6)
 v3 <- c(7,8,9,10)
-rbind(v1,v2) # 데이터 결합
+rbind(v1,v2)
 cbind(v1,v2)
 rbind(v1,v3) # 재사용 규칙
 ```
@@ -183,49 +199,92 @@ rbind(v1,v3) # 재사용 규칙
 ### 내장 함수
 
 - 자주 사용하는 내장 함수
+
+- 도움말 기능
 ```r
 help()
 help(data.frame)
+```
+
+- 실행 기록 출력
+```r
 history()
+```
+
+- 문자열 합치기
+```r
 paste("Pen Pineapple", "Apple Pen", sep = "___") # default : " "
 paste("Pen Pineapple", "Apple Pen") # default : " "
+```
+
+- 반복되는 수 생성
+```r
 seq(1,10,by=2) # Sequence
 rep(1,5) # Repeat
+```
+
+- 선언된 변수 제거
+```r
 a <- 1
 a
 rm(a)
 a
+```
+
+- 선언된 변수 목록 확인
+```r
 ls()
-print("ADsP")
-print(a1)
 ```
 
 ### 반복문
 
+- 특정 기능, 알고리즘을 반복 수행하기 위해 사용되는 문
+
+- for문
+    - 괄호 안의 loop가 모두 사용될 때 까지 수행
+```r
 for(i in 1:3){
   print("oh")
 }
+```
 
+- while문
+    - 괄호 안이 참일 경우 계속 반복 수행
+```r
 while(TRUE){
   print("!!!!")
 }
+```
 
+- 위와 같이 while문을 실행시킬 경우 무한 루프에 걸려 강제 중단을 해야만 다음 코드를 실행시킬 수 있기 때문에 아래와 같은 로직을 구현해 주로 사용한다.
+```r
 cnt <- 0
 while(cnt <4){
   print("oh")
   cnt <- cnt +1 # cnt : 0 1 2 3 4(x)
 }
+```
 
 ### 조건문
+
+- 특정 조건(괄호 안이 True일 경우)을 만족할 경우 수행
+
+```r
 a <- 1
 b <- 2
 
-a<b
+if(a<b){
+    print("a보다 b가 크다.")
+}
 
-# if
-# if / else
-# if / else if / else
+if(a>b){
+    print("a보다 b가 작다.")
+}
+```
 
+- if문을 만족하지 못하는 그 외의 경우에 else문을 사용해 예외처리를 한다.
+    - if문 외에 추가로 조건문이 더 필요하다면 else if문을 사용한다.
+```r
 if(a>b){
   print("a가 b보다 크다")
 }else{
@@ -239,8 +298,11 @@ if(a>b){
 }else{
   print("a와 b가 같다")
 }
+```
 
 ### 함수
+
+```r
 comp <- function(a,b){ # a,b : 환경변수 (parameter)
   if(a>b){
     print("a가 b보다 크다")
@@ -254,8 +316,12 @@ comp <- function(a,b){ # a,b : 환경변수 (parameter)
 comp(1,2)
 comp(100,50)
 comp(99,99)
+```
+
 
 ### 숫자 연산
+
+```r
 sqrt(4) # square root
 abs(-2) # absolute value
 exp(1) # e^1 : 자연상수 거듭제곱
@@ -269,8 +335,11 @@ summary(iris) # 요약
 round(3.5) # 반올림
 ceiling(3.2) # 올림
 floor(3.7) # 내림
+```
 
 ### 문자 연산
+
+```r
 str <- "ADsP"
 tolower(str) # 소문자로
 toupper(str) # 대문자로
@@ -279,8 +348,12 @@ substr(str,2,3) # 일부 추출(index로)
 strsplit(str,"s") # 특정 문자로 구분
 grepl("A",str) # 특정 문자 포함 여부
 gsub("s","a",str) # 특정 문자 바꾸기
+```
+
 
 ### 백터 연산
+
+```r
 v1 <- c(1:10)
 v2 <- c(11:20)
 v1
@@ -298,8 +371,11 @@ order(v1)
 order(v2)
 
 rev(v1) # 거꾸로 (reverse)
+```
 
 ### 행렬 연산
+
+```r
 v1 <- matrix(c(1:12),nrow = 3,ncol = 4,byrow = T)
 v1
 t(v1) # Transposed Matrix
@@ -309,8 +385,11 @@ v3 <- matrix(c(1:4),nrow = 2,ncol = 2,byrow = T)
 v2
 v3
 v2%*%v3 # 행렬의 곱
+```
 
 ### 통계 함수
+
+```r
 v1 <- 1:10
 v1
 
@@ -325,16 +404,22 @@ library(fBasics) # Load R Packages
 skewness(v1) # 왜도
 kurtosis(v1) # 첨도
 summary(v1)
+```
 
 ### 데이터 탐색
+
+```r
 x <- c(1:12)
 x
 head(x,3)
 tail(x,3)
 quantile(x) # 4분위 수 (summary에도 나옴)
 summary(x)
+```
 
 ### 데이터 전처리
+
+```r
 df1
 d4 <- rep("해바라기반",5)
 d4
@@ -343,8 +428,12 @@ df2
 merge(df1,df2) # 데이터프레임 병합
 apply(df2,2,print) # 1:행, 2:열 별로 주어진 함수 수행
 subset(df1, d2=="맹구") # 특정 데이터 포함 추출
+```
+
 
 ### 정규분포 :: 개념 정리 (rnorm, dnorm, pnorm, qnorm)
+
+```r
 x <- rnorm(100,0,1) # 랜덤 100개 정규분포 생성
 x
 hist(x) # histogram
@@ -355,13 +444,20 @@ hist(y)
 pnorm(-2,0,1) # 정규분포에서 -2보다 작을 확률
 pnorm(1.96,0,1)
 qnorm(0.975,0,1) # 정규분포에서 더 작은 분포의 넓이가 0.975인 값
+```
 
 ### 표본추출
+
+```r
 runif(10) # 0~1 사이의 랜덤 난수 10개 생성, 범위 지정 가능
 runif(10,1,10)
 sample(x,10) # 데이터에서 10개 추출
+```
+
 
 ### 날짜
+
+```r
 Sys.Date() # 현재 날짜
 Sys.time() # 현재 시간 (KST : Korea Standard Time)
 date <- "2025-04-26"
@@ -373,13 +469,20 @@ format(Sys.Date(),"%y.%B.%d") # Y:4자리년도, y:2자리년도, m:월, d:일, 
 as.POSIXct(0)
 as.POSIXct(946080000) # 1970.01.01 기준으로 해당 초가 지난 시점(시점 설정 가능)
 as.POSIXct(3600)
+```
 
 ### 산점도
+
+```r
 plot(x)
 abline(h = 0) # v:x축, h:y축 라인 생성
 hist(x)
+```
+
 
 ### 파일 읽기 쓰기
+
+```r
 r <- read.csv("./test.csv",header = TRUE)
 r[4,] <- c("유리",5,"해바라기반")
 r
@@ -387,9 +490,13 @@ write.csv(r,"./test.csv",fileEncoding = "UTF-8",row.names = FALSE)
 saveRDS(r,"ADsP_R_test.rds") # R Data serialization
 rds <- readRDS("ADsP_R_test.rds")
 rds
+```
 
 ### 기타
+
+```r
 getwd() # 현재 경로 확인
 setwd("../")
 getwd()
 setwd("./ADSP_2025/")
+```
