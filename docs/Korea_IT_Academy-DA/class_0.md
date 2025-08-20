@@ -34,3 +34,320 @@ R은 통계나 유전학 연구 분야에서 주로 사용되는 오픈소스 �
     3. 환경/히스토리 창 (Environment/History): 현재 작업 환경(변수, 데이터)과 이전에 사용한 명령어 목록 확인. 작업 환경을 관리하고 이전 명령어를 재사용하는 데 유용
     4. 파일/플롯/패키지 창 (Files/Plots/Packages): 파일 탐색, 그래프 생성 및 표시, 패키지 관리 기능 제공
 
+- 실습 진행
+    1. Script 창에 코드 입력
+    ```
+    print("Hello World!")
+    ```
+    2. 입력 된 코드에서 ▶(Run, 단축키 : Ctrl + Enter) 실행 후 Console 창에서 실행 결과 확인
+
+### 주석
+- 실행되지 않는 코드. 주로 코드에 대한 설명이나 참고에 사용
+```r
+# 주석처리
+print("실행되는 코드")
+#print("실행 안되는 코드")
+```
+
+### 데이터 타입
+
+- 데이터에는 다양한 타입이 존재하며, 타입에 따라 사용할 수 있는 함수, 연산 등이 존재한다.
+```r
+class('ADsP') # 문자형 타입
+class("1") # 숫자형 타입
+class(Inf) # 무한
+class(NaN) # Not A Number
+class(TRUE) # 논리형 타입
+class(FALSE) 
+class(NA) # 공간을 차지하는 결측값
+class(NULL) # 공간을 차지하지 않는 결측값
+```
+
+### 연산자
+```r
+a <- "ADsP" # 대입 연산자 (<<-, = 도 사용 가능)
+a = "hello"
+b <- 1
+c <- 2
+d <- TRUE
+e <- NA
+f <- NULL
+a
+a == "ADsP" # 비교 연산자 (==,<,>,!=,<=,>=)
+a
+b
+c
+d
+e
+f
+is.character(a)
+is.numeric(b)
+is.logical(d)
+is.na(e)
+is.null(f)
+b+c # 산술 연산자 (+,-,*,/)
+b/c
+7/3
+7%/%3 # 몫
+7%%3 # 나머지
+2**2 # 제곱 (^ 도 사용 가능)
+2^2
+3^2
+TRUE&FALSE # ! : Not , & : And , | : Or
+1<2|1>2
+F&F
+FALSE|FALSE
+```
+
+### 벡터
+v1 <- c(1,2,3,4) # concatenate
+v1[4]
+v2 <- c(1,"ADsP",TRUE)
+v2
+
+class(v2[1])
+
+v3 <- c(1:6)
+v3
+
+### 행렬
+m1 <- matrix(v3,nrow=2,ncol=3)
+m1
+m2 <- matrix(v3,nrow=2,ncol=3,byrow = TRUE)
+m2
+dim(v3) <- c(2,3)
+v3
+
+### 배열 : 3차원 이상의 데이터 구분
+a1 <- c(1:12)
+a1
+a2 <- array(a1,dim = c(2,2,3))
+a2
+
+### 데이터프레임
+d1 <- c(1,2,3,4,5)
+d2 <- c("짱구","철수","유리","맹구","훈이")
+d3 <- c("흰둥이","학원","토끼","돌맹이","주먹밥")
+df1 <- data.frame(d1,d2,d3)
+df1
+df1[2]
+df1[,2] # 데이터 추출
+df1[,1]
+df1[4,3]
+
+v1 <- c(1,2,3) 
+v2 <- c(4,5,6)
+v3 <- c(7,8,9,10)
+rbind(v1,v2) # 데이터 결합
+cbind(v1,v2)
+rbind(v1,v3) # 재사용 규칙
+
+### 내장 함수
+help()
+help(data.frame)
+history()
+paste("Pen Pineapple", "Apple Pen", sep = "___") # default : " "
+paste("Pen Pineapple", "Apple Pen") # default : " "
+seq(1,10,by=2) # Sequence
+rep(1,5) # Repeat
+a <- 1
+a
+rm(a)
+a
+ls()
+print("ADsP")
+print(a1)
+
+### 통계 함수
+v1 <- 1:10
+v1
+
+sum(v1) # summation
+var(v1) # variance
+sd(v1) # standard deviation
+range(v1)
+
+install.packages("fBasics") # R Packages install
+library(fBasics) # Load R Packages
+
+skewness(v1) # 왜도
+kurtosis(v1) # 첨도
+summary(v1)
+
+### 반복문
+
+for(i in 1:3){
+  print("oh")
+}
+
+while(TRUE){
+  print("!!!!")
+}
+
+cnt <- 0
+while(cnt <4){
+  print("oh")
+  cnt <- cnt +1 # cnt : 0 1 2 3 4(x)
+}
+
+### 조건문
+a <- 1
+b <- 2
+
+a<b
+
+# if
+# if / else
+# if / else if / else
+
+if(a>b){
+  print("a가 b보다 크다")
+}else{
+  print("a가 b보다 크지 않다")
+}
+
+if(a>b){
+  print("a가 b보다 크다")
+}else if(a<b){
+  print("a가 b보다 작다")
+}else{
+  print("a와 b가 같다")
+}
+
+### 함수
+comp <- function(a,b){ # a,b : 환경변수 (parameter)
+  if(a>b){
+    print("a가 b보다 크다")
+  }else if(a<b){
+    print("a가 b보다 작다")
+  }else{
+    print("a와 b가 같다")
+  }
+}
+
+comp(1,2)
+comp(100,50)
+comp(99,99)
+
+### 숫자 연산
+sqrt(4) # square root
+abs(-2) # absolute value
+exp(1) # e^1 : 자연상수 거듭제곱
+log(exp(1)) # 자연상수 로그
+log10(100) # 10 로그
+pi # 원주율
+
+iris # R 내장 데이터프레임 (실습에 주로 사용)
+summary(iris) # 요약
+
+round(3.5) # 반올림
+ceiling(3.2) # 올림
+floor(3.7) # 내림
+
+### 문자 연산
+str <- "ADsP"
+tolower(str) # 소문자로
+toupper(str) # 대문자로
+nchar(str) # 문자 갯수
+substr(str,2,3) # 일부 추출(index로)
+strsplit(str,"s") # 특정 문자로 구분
+grepl("A",str) # 특정 문자 포함 여부
+gsub("s","a",str) # 특정 문자 바꾸기
+
+### 백터 연산
+v1 <- c(1:10)
+v2 <- c(11:20)
+v1
+v2
+length(v1)
+paste(v1,"번") # 문자로 변환된다.
+cov(v1,v2) # 공분산
+cor(v1,v2) # 상관계수, -1 ~ 1(양의 상관관계)
+table(v1) # 각 데이터 별 갯수
+
+order(v1) # 순서(index) : 그 데이터가 순서대로 나열했을 때 몇번째에 위치하는가
+v1 <- c(1,3,2,4,6,7,8,9,10)
+v1
+order(v1)
+order(v2)
+
+rev(v1) # 거꾸로 (reverse)
+
+### 행렬 연산
+v1 <- matrix(c(1:12),nrow = 3,ncol = 4,byrow = T)
+v1
+t(v1) # Transposed Matrix
+diag(v1) # [1,1][2,2][3,3]...
+v2 <- matrix(c(1:4),nrow = 2,ncol = 2,byrow = T)
+v3 <- matrix(c(1:4),nrow = 2,ncol = 2,byrow = T)
+v2
+v3
+v2%*%v3 # 행렬의 곱
+
+### 데이터 탐색
+x <- c(1:12)
+x
+head(x,3)
+tail(x,3)
+quantile(x) # 4분위 수 (summary에도 나옴)
+summary(x)
+
+### 데이터 전처리
+df1
+d4 <- rep("해바라기반",5)
+d4
+df2 <- data.frame(d1,d4)
+df2
+merge(df1,df2) # 데이터프레임 병합
+apply(df2,2,print) # 1:행, 2:열 별로 주어진 함수 수행
+subset(df1, d2=="맹구") # 특정 데이터 포함 추출
+
+### 정규분포 :: 개념 정리 (rnorm, dnorm, pnorm, qnorm)
+x <- rnorm(100,0,1) # 랜덤 100개 정규분포 생성
+x
+hist(x) # histogram
+y <- dnorm(x,0,1) # 확률밀도 함수(누적 정규분포 곡선을 따른다.)
+y
+hist(y)
+
+pnorm(-2,0,1) # 정규분포에서 -2보다 작을 확률
+pnorm(1.96,0,1)
+qnorm(0.975,0,1) # 정규분포에서 더 작은 분포의 넓이가 0.975인 값
+
+### 표본추출
+runif(10) # 0~1 사이의 랜덤 난수 10개 생성, 범위 지정 가능
+runif(10,1,10)
+sample(x,10) # 데이터에서 10개 추출
+
+### 날짜
+Sys.Date() # 현재 날짜
+Sys.time() # 현재 시간 (KST : Korea Standard Time)
+date <- "2025-04-26"
+date
+class(date)
+date <- as.Date(date) # 날짜 형식으로 변환
+class(date)
+format(Sys.Date(),"%y.%B.%d") # Y:4자리년도, y:2자리년도, m:월, d:일, b:축약월, B:전체월 문자형
+as.POSIXct(0)
+as.POSIXct(946080000) # 1970.01.01 기준으로 해당 초가 지난 시점(시점 설정 가능)
+as.POSIXct(3600)
+
+### 산점도
+plot(x)
+abline(h = 0) # v:x축, h:y축 라인 생성
+hist(x)
+
+### 파일 읽기 쓰기
+r <- read.csv("./test.csv",header = TRUE)
+r[4,] <- c("유리",5,"해바라기반")
+r
+write.csv(r,"./test.csv",fileEncoding = "UTF-8",row.names = FALSE)
+saveRDS(r,"ADsP_R_test.rds") # R Data serialization
+rds <- readRDS("ADsP_R_test.rds")
+rds
+
+### 기타
+getwd() # 현재 경로 확인
+setwd("../")
+getwd()
+setwd("./ADSP_2025/")
