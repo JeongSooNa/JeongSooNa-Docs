@@ -1,4 +1,4 @@
-# Class 3 - R Plot
+# Class 3 - R Basic Plot
 
 시각화는 데이터 분석 결과를 보여줌에 있어서 중요한 요소로 자리잡고 있다.  
 R은 시각화에 특화된 프로그래밍 언어로, 다양한 패키지와 함께 그래프를 제공
@@ -67,8 +67,72 @@ plot(Sepal.Length ~ Sepal.Width, data = iris)
 
 ### Bar Plot
 
-- ldeaths 데이터셋 사용 (영국 호흡기 질병 월별 사망자 수)
+- barplot()을 사용한 간단한 막대그래프 생성
 
 ```r
+barplot(iris$Petal.Length)
+barplot(iris$Species)
+```
+
+- par 함수를 사용해 한번에 여러 개의 그래프를 띄울 수 있다.
+
+```r
+# 3행 1열의 그래프 표시
+par(mfrow=c(3,1))
+
+# 관측치 별 막대그래프
+barplot(iris$Petal.Length) 
+# RColorBrewer 패키지의 색상 적용
+barplot(iris$Sepal.Length,col  = brewer.pal(3,"Set1"))
+# 품종 별 분포를 누적그래프 적용
+barplot(table(iris$Species,iris$Sepal.Length),col  = brewer.pal(3,"Set1"))
+```
+
+- 시계열 데이터를 활용한 다양한 막대 그래프 활용
+
+```r
+# 영국 호흡기 질환 월별 사망자 수 (ts:Time Siries Data)
 ldeaths
+# matrix 형태로 변환
+ld <- matrix(ldeaths, nrow=6, byrow=T) 
+colnames(ld) <- month.abb
+rownames(ld) <- 1974:1979
+ld
+
+par(mfrow=c(2,2))
+
+# 1월달 막대그래프
+barplot(ld[,"Jan"]) 
+# 각 월별로 년도 하위 그룹 막대 그래프
+barplot(ld, beside=T)
+# 위의 그래프와 동일하나 각 년도 별 쌓아서 표현
+barplot(ld, beside=F)
+# 위의 그래프를 아래에서 위 방향 > 좌에서 우방향
+barplot(ld, beside=F, horiz=T, density=5)
+```
+
+### Histogram
+
+- hist()는 연속형 자료의 그래프로 많이 사용되며, 주로 통계적 분포를 파악하는데 유용하다.
+
+- mtcars 데이터셋을 활용해 그래프를 그려보자. 32종 차들의 10가지 특성(연비, 무게 등)을 정리한 데이터
+
+```r
+head(mtcars)
+str(mtcars)
+```
+
+- 4분할 히스토그램
+
+```r
+par(mfrow=c(2,2))
+
+# 기본적인 히스토그램
+hist(mtcars$mpg) # mpg는 Miles per Gallon으로 연비를 의미한다.
+# 히스토그램의 막대를 12개로 설정
+hist(mtcars$mpg, breaks=12)
+# y축의 값을 빈도가 아닌 비율로 하고 막대의 색을 빨강과 파랑이 교차로 나오게 설정
+hist(mtcars$mpg, breaks=12, freq=FALSE, col=c("red", "blue"))
+# 막대가 25%, 50%, 75%, 100% 가 되는 값
+hist(mtcars$mpg, breaks=quantile(mtcars$mpg))
 ```
