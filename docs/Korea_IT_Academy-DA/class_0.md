@@ -65,14 +65,15 @@ class(NULL) # 공간을 차지하지 않는 결측값
 
 - 타입 확인을 통해 True/False로 반환하는 is. 함수를 사용할 수 있다.
 ```r
-is.character(a)
-is.numeric(b)
-is.logical(d)
-is.na(e)
-is.null(f)
+is.character('ADsP')
+is.numeric(1)
+is.logical(TRUE)
+is.na(NA)
+is.null(NULL)
 ```
 
 ### 연산자
+- 자주 사용하는 값과 현재 상태 등을 저장하기 위해 변수를 사용.
 
 - 대입 연산자(<<-, = 도 사용 가능)
 ```r
@@ -138,6 +139,21 @@ class(v2[1])
 v1[1]
 v1[1:3]
 v1[c(1,2,4)]
+```
+
+- 순열 벡터 생성
+```r
+seq(1,10,by=2) # Sequence
+```
+
+- 반복 벡터 생성
+```r
+rep(1,5) # Repeat
+```
+
+- n 개의 빈 값을 갖는 벡터를 생성
+```r
+v0 <- vector(length=n)
 ```
 
 ### 행렬(Matrix)
@@ -215,12 +231,6 @@ history()
 ```r
 paste("Pen Pineapple", "Apple Pen", sep = "___") # default : " "
 paste("Pen Pineapple", "Apple Pen") # default : " "
-```
-
-- 반복되는 수 생성
-```r
-seq(1,10,by=2) # Sequence
-rep(1,5) # Repeat
 ```
 
 - 선언된 변수 제거
@@ -356,8 +366,7 @@ gsub("s","a",str) # 특정 문자 바꾸기
 ```r
 v1 <- c(1:10)
 v2 <- c(11:20)
-v1
-v2
+v1+v2 # 길이가 다를 경우 재사용 법칙이 적용된다.
 length(v1)
 paste(v1,"번") # 문자로 변환된다.
 cov(v1,v2) # 공분산
