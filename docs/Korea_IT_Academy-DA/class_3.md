@@ -1,45 +1,133 @@
-# Class 3- R Path 이해
+# Class 3 - R 기초 통계학
 
+### 통계란?
+
+산술적 방법을 기초로 하여, 주로 다량의 데이터를 관찰하고 정리 및 분석하는 방법
+
+### 통계 용어
+
+- 모집단 : 조사하고자 하는 대상 집단 전체
+- 표본 : 조사하기 위해 추출한 모집단의 일부 원소
+- 모수 : 표본 관측에 의해 구하고자 하는 모집단에 대한 정보
+- 통계량 : 표본의 정보 (통계값)
+- 모집단 ⊃ 표본
+
+### 기술통계
+
+- 표본 자체의 속성이나 특징을 파악하는 데 중점을 둔 통계 기법
+- 표본
 ```r
-### PATH
-###
-### R에서도 운영체제 명령어와 같이 파일, 폴더 등 시스템 관리가 가능.
-### 프로젝트의 library를 생성하고, 관련 파일을 관리하면 편리.
-
-### R 설치 경로 확인
-R.home()
-### working 디렉토리 확인 및 설정 
-getwd()
-setwd('river/')
-### 라이브러리(패키지)가 저정되어 있는 경로 확인
-.libPaths()
-### 새로운 디렉터리 만들기 
-dir.create()
-### 디렉터리 존재 여부 확인
-dir.exists()
-### 문자열 → 파일경로 
-file.path()
-### 운영체제에 따라서 자동으로 경로 표시 해줌 
-normalizePath()
-### 홈 디렉터리 절대경로 표시 
-path.expand()
-### R 시스템 파일 접근하기
-system.file()
-### 경로에서 파일이름과 디렉터리경로 분리하기
-basename()
-dirname()
-
-
-### 파일 생성
-file.create()
-### 파일 삭제
-file.remove()
-### 파일 복사
-file.copy('file_name','directory_name')
-### 파일 이동
-install.packages('filesstrings')
-library('filesstrings')
-file.move('gota-river-near-sjotopvannersbur.csv','river/')
-### rename
-file.rename('file_name','file_rename')
+x = c(1,2,3,4,5,6,7,8,9,10)
 ```
+
+- 최솟값 최댓값
+    - 데이터에 결측값(NA)이 있을 경우 min,max는 NA로 출력된다.
+    - 데이터 전처리 필요.
+```r
+min(x)
+max(x)
+```
+
+- 최솟값과 최댓값의 index 추출
+```r
+which.mix(x)
+which.max(x)
+```
+
+- 중앙값
+```r
+median(x)
+```
+
+- 평균
+```r
+mean(x)
+```
+
+- 범위
+```r
+range(x)
+```
+
+- 사분위수
+```r
+quantile(x)
+```
+
+- 사분위수 범위(사분범위:IQR)
+```r
+IQR(x)
+```
+
+- 분산
+    - 데이터의 분포, 퍼짐 정도
+```r
+var(x)
+```
+
+- 표준편차
+    - 분산의 제곱근
+```r
+sd(x)
+```
+
+- 공분산
+    - 공분산과 상관계수는 상관분석에서 자세히 다루자!
+```r
+cov(x,y,method=c("pearson"))
+cov(x,y,method=c("spearman"))
+```
+
+- 상관계수
+```r
+cor(x,y,method=c("pearson"))
+cor(x,y,method=c("spearman"))
+```
+
+- 왜도 첨도
+    - 왜도 첨도 분석이 가능한 R package 설치 필요
+```r
+install.packages("fBasics")
+library(fBasics)
+
+# 왜도 첨도 예시를 위한 R 내장 데이터 mtcars 사용
+hist(mtcars$mpg)
+
+# 왜도
+skewness(mtcars$mpg)
+
+# 첨도
+kurtosis(mtcars$mpg)
+```
+
+- 합계
+```r
+sum(x)
+```
+
+- 길이
+```r
+length(x)
+```
+
+- 순위
+```r
+rank(x)
+```
+
+- 차분
+    - 시계열 데이터에서 자세히 다루자!
+```r
+diff(x,lag=1)
+```
+
+### 추리통계
+
+- 수집한 데이터를 바탕으로 추론 및 예측하는 통계 기법
+- 위의 기술통계량을 사용해 다양한 분석법으로 추정한다.
+- 종류
+    - 모수 추정 : 표본을 통해 모집단의 특성인 모수(모평균, 모표준편차 등)을 추정
+    - 가설 검정 : 대상 집단에 대한 특정 가설 설정 후 옳고 그른지에 대한 채택 여부 결정
+    - 예측 : 미래의 불확실성을 해결해 효율적인 의사결정을 위해 활용(시계열 분석)
+
+- 추리 통계 및 다양한 분석 방법은 이 후 각 세션에서 조금 더 자세히 알아보자! (R 실습과 함께)

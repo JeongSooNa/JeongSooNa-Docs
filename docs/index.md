@@ -103,6 +103,11 @@ Korea_IT_Academy-DA/class_0.md
 Korea_IT_Academy-DA/class_1.md
 Korea_IT_Academy-DA/class_2.md
 Korea_IT_Academy-DA/class_3.md
+Korea_IT_Academy-DA/class_4.md
+Korea_IT_Academy-DA/class_5.md
+Korea_IT_Academy-DA/darts.md
+Korea_IT_Academy-DA/korean_population.md
+Korea_IT_Academy-DA/river.md
 ```
 
 ```{toctree}

@@ -1,36 +1,45 @@
-# Class 2 - R Package 사용하기
-
-R은 자체적으로 내장 된 함수 및 패키지들을 사용해 다양한 작업을 수행할 수 있으나, 여러 개발자로부터 다양한 패키지를 제공받아 유용하게 사용할 수 있다.  
-이는 Open Source Platform, 프로그래밍 언어의 특징이기도 하며, 사용자의 필요에 따라 손쉽게 설치 및 사용할 수 있다.  
-패키지들에 대한 정보는 [R Packages](https://cran.r-project.org/web/packages/available_packages_by_name.html)에서 확인 가능하며, 필요에 따라 원하는 패키지를 검색하여 설치 및 사용하는 것을 추천한다.
-
-### 패키지 설치
+# Class 2- R Path 이해
 
 ```r
-install.packages("readxl")
-```
+### PATH
+###
+### R에서도 운영체제 명령어와 같이 파일, 폴더 등 시스템 관리가 가능.
+### 프로젝트의 library를 생성하고, 관련 파일을 관리하면 편리.
 
-### 패키지 불러오기
+### R 설치 경로 확인
+R.home()
+### working 디렉토리 확인 및 설정 
+getwd()
+setwd('river/')
+### 라이브러리(패키지)가 저정되어 있는 경로 확인
+.libPaths()
+### 새로운 디렉터리 만들기 
+dir.create()
+### 디렉터리 존재 여부 확인
+dir.exists()
+### 문자열 → 파일경로 
+file.path()
+### 운영체제에 따라서 자동으로 경로 표시 해줌 
+normalizePath()
+### 홈 디렉터리 절대경로 표시 
+path.expand()
+### R 시스템 파일 접근하기
+system.file()
+### 경로에서 파일이름과 디렉터리경로 분리하기
+basename()
+dirname()
 
-```r
-library(readxl)
-```
 
-### 패키지 사용
-
-```r
-a <- read_excel("test.xlsx")
-print(a)
-```
-
-### 패키지 업데이트
-
-```r
-update.packages("readxl")
-```
-
-### 패키지 삭제
-
-```r
-remove.packages("readxl")
+### 파일 생성
+file.create()
+### 파일 삭제
+file.remove()
+### 파일 복사
+file.copy('file_name','directory_name')
+### 파일 이동
+install.packages('filesstrings')
+library('filesstrings')
+file.move('gota-river-near-sjotopvannersbur.csv','river/')
+### rename
+file.rename('file_name','file_rename')
 ```
