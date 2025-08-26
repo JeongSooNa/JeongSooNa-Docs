@@ -51,7 +51,7 @@
 ### 목차
 
 ```{toctree}
-index.md
+index
 ```
 
 ```{toctree}
