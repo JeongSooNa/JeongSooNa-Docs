@@ -55,7 +55,7 @@ index.md
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Korea IT Academy - Python
 
 Korea_IT_Academy-Python/index.md
