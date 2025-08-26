@@ -1,5 +1,7 @@
 ### R River Time Series Data Analytics
 
+- 1807~1956년도 스웨덴 강 수위 데이터(시계열 데이터)를 활용한 시계열 분석
+
 ```r
 install.packages('forecast')
 #install.packages("lmtest")

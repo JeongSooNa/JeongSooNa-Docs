@@ -1,5 +1,7 @@
 ### R Korean Population Visualization
 
+- 남북한 지역 별 인구 데이터를 사용한 구글 맵 활용 데이터 시각화
+
 ```r
 #남북한의 인구
 install.packages("ggplot2")

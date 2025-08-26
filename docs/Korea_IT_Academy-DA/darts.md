@@ -1,5 +1,7 @@
 ### R Darts Game
 
+- 난수 생성을 활용한 다트 게임 구현
+
 ```r
 #양궁 (원형)
 color<-heat.colors(5)

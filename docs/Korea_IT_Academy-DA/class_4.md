@@ -1,15 +1,14 @@
 # Class 4 - R Statistics Distribution function
 
+- 기초통계학 통계 분포를 이해하고, R 프로그래밍을 통해 분포 그래프 확인
+
 ```r
-####################################
-# Statistics Distribution function #
-####################################
 
 ## before distribution option
-# d : probability density
-# p : cumulative probability
-# q : quantiles
-# r : random number
+# d : probability density (확률 밀도)
+# p : cumulative probability (누적 확률)
+# q : quantiles (분위수)
+# r : random number (난수)
 
 ## List
 if(0)"
