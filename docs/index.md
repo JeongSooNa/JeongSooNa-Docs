@@ -55,7 +55,23 @@ index.md
 ```
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
+:caption: Korea IT Academy - DA
+
+Korea_IT_Academy-DA/index.md
+Korea_IT_Academy-DA/class_0.md
+Korea_IT_Academy-DA/class_1.md
+Korea_IT_Academy-DA/class_2.md
+Korea_IT_Academy-DA/class_3.md
+Korea_IT_Academy-DA/class_4.md
+Korea_IT_Academy-DA/class_5.md
+Korea_IT_Academy-DA/darts.md
+Korea_IT_Academy-DA/korean_population.md
+Korea_IT_Academy-DA/river.md
+```
+
+```{toctree}
+:maxdepth: 2
 :caption: Korea IT Academy - Python
 
 Korea_IT_Academy-Python/index.md
@@ -92,22 +108,6 @@ Korea_IT_Academy-Python/python_project.md
 :caption: Korea IT Academy - ADsP
 
 Korea_IT_Academy-ADsP/index.md
-```
-
-```{toctree}
-:maxdepth: 2
-:caption: Korea IT Academy - DA
-
-Korea_IT_Academy-DA/index.md
-Korea_IT_Academy-DA/class_0.md
-Korea_IT_Academy-DA/class_1.md
-Korea_IT_Academy-DA/class_2.md
-Korea_IT_Academy-DA/class_3.md
-Korea_IT_Academy-DA/class_4.md
-Korea_IT_Academy-DA/class_5.md
-Korea_IT_Academy-DA/darts.md
-Korea_IT_Academy-DA/korean_population.md
-Korea_IT_Academy-DA/river.md
 ```
 
 ```{toctree}
