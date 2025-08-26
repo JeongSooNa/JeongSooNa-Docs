@@ -87,7 +87,6 @@ def solution(num_list):
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(common):
     flag = False
@@ -98,7 +97,6 @@ def solution(common):
     else:
         return common[-1] * (common[1] / common[0])
 ```
--->
 
 ### 등수 매기기
 
@@ -121,7 +119,6 @@ def solution(common):
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(score):
     answer = []
@@ -136,7 +133,6 @@ def solution(score):
         answer[i] = avg.index(answer[i]) + 1
     return answer
 ```
--->
 
 ### 연속된 수의 합
 
@@ -158,7 +154,6 @@ def solution(score):
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(num, total):
     answer = []
@@ -169,7 +164,6 @@ def solution(num, total):
         answer.append((total-sum)/num + i)
     return answer
 ```
--->
 
 ### 직사각형 넓이 구하기
 
@@ -191,7 +185,6 @@ def solution(num, total):
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(dots):
     a1 = ((dots[0][0]-dots[1][0])**2+(dots[0][1]-dots[1][1])**2)**0.5
@@ -203,7 +196,6 @@ def solution(dots):
             max = i
     return a1*a2*a3/max
 ```
--->
 
 ### 옹알이 (1)
 
@@ -231,7 +223,6 @@ def solution(dots):
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(babbling):
     answer = 0
@@ -246,11 +237,8 @@ def solution(babbling):
                 answer += 1
     return answer
 ```
--->
 
 - Issue
-
-<!--
     1. "wyeoo"의 경우 "ye"를 replace 한 후 "woo"가 되어 이 후 ""로 바뀌어 결과에 영향을 미칠 수 있다.
     ```py
     def solution(babbling):
@@ -266,4 +254,3 @@ def solution(babbling):
     ```
 
     2. python에서 ```str.replace()``` 함수는 해당 문자열을 직접 변경하는 것이 아닌 replace값을 반환하는 함수로, 원래 문자열의 변경을 원할 경우 ```i = i.replace()``` 형식으로 코드를 작성해야한다.
--->

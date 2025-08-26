@@ -22,7 +22,6 @@
 
 - 문제 풀이
 
-<!--
 ```py
 def solution(t, p):
     cnt = 0
@@ -31,4 +30,3 @@ def solution(t, p):
             cnt += 1
     return cnt
 ```
--->
