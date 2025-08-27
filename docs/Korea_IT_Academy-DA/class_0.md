@@ -46,15 +46,24 @@ R은 통계나 유전학 연구 분야에서 주로 사용되는 오픈소스 �
 ```r
 # 주석처리
 print("실행되는 코드")
-#print("실행 안되는 코드")
+# print("실행 안되는 코드")
+
+# 여러 줄의 주석을 처리할 경우 아래와 같은 방법을 사용하기도 한다. (이 후 if 조건문을 통해 확인)
+if(0){
+  """
+  여러 줄의
+  주석을
+  처리하는 방법
+  """
+}
 ```
 
 ### 데이터 타입
 
 - 데이터에는 다양한 타입이 존재하며, 타입에 따라 사용할 수 있는 함수, 연산 등이 존재한다.
 ```r
-class('ADsP') # 문자형 타입
-class("1") # 숫자형 타입
+class("Character") # 문자형 타입
+class(1) # 숫자형 타입
 class(Inf) # 무한
 class(NaN) # Not A Number
 class(TRUE) # 논리형 타입
@@ -65,7 +74,7 @@ class(NULL) # 공간을 차지하지 않는 결측값
 
 - 타입 확인을 통해 True/False로 반환하는 is. 함수를 사용할 수 있다.
 ```r
-is.character('ADsP')
+is.character('Character')
 is.numeric(1)
 is.logical(TRUE)
 is.na(NA)
@@ -77,8 +86,8 @@ is.null(NULL)
 
 - 대입 연산자(<<-, = 도 사용 가능)
 ```r
-a <- "ADsP"
-a = "hello"
+a <- "Hello"
+a = "Hello"
 b <- 1
 c <- 2
 d <- TRUE
@@ -89,7 +98,7 @@ f <- NULL
 - 비교 연산자 (==,<,>,!=,<=,>=)
     - 연산 결과는 True/False로 반환된다.
 ```r
-a == "ADsP"
+a == "Hello"
 b < c
 b >= c
 ```
@@ -123,7 +132,7 @@ FALSE|FALSE
 ```r
 v1 <- c(1,2,3,4)
 v1
-v2 <- c(1,"ADsP",TRUE)
+v2 <- c(1,"R",TRUE)
 v2
 v3 <- c(1:6)
 v3
@@ -350,14 +359,14 @@ floor(3.7) # 내림
 ### 문자 연산
 
 ```r
-str <- "ADsP"
+str <- "Hello World"
 tolower(str) # 소문자로
 toupper(str) # 대문자로
 nchar(str) # 문자 갯수
 substr(str,2,3) # 일부 추출(index로)
-strsplit(str,"s") # 특정 문자로 구분
-grepl("A",str) # 특정 문자 포함 여부
-gsub("s","a",str) # 특정 문자 바꾸기
+strsplit(str,"o") # 특정 문자로 구분
+grepl("W",str) # 특정 문자 포함 여부
+gsub("e","a",str) # 특정 문자 바꾸기
 ```
 
 
@@ -496,8 +505,8 @@ r <- read.csv("./test.csv",header = TRUE)
 r[4,] <- c("유리",5,"해바라기반")
 r
 write.csv(r,"./test.csv",fileEncoding = "UTF-8",row.names = FALSE)
-saveRDS(r,"ADsP_R_test.rds") # R Data serialization
-rds <- readRDS("ADsP_R_test.rds")
+saveRDS(r,"R_test.rds") # R Data serialization
+rds <- readRDS("R_test.rds")
 rds
 ```
 
@@ -507,5 +516,5 @@ rds
 getwd() # 현재 경로 확인
 setwd("../")
 getwd()
-setwd("./ADSP_2025/")
+setwd("./R_2025/")
 ```
