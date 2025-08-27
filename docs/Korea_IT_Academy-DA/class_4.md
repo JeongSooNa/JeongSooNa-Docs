@@ -2,44 +2,76 @@
 
 - 기초통계학 통계 분포를 이해하고, R 프로그래밍을 통해 분포 그래프 확인
 
-```r
+### Before Distribution Options
+  - d : probability density (확률 밀도)
+  - p : cumulative probability (누적 확률)
+  - q : quantiles (분위수)
+  - r : random number (난수)
 
-## before distribution option
-# d : probability density (확률 밀도)
-# p : cumulative probability (누적 확률)
-# q : quantiles (분위수)
-# r : random number (난수)
+### 분포 함수
 
-## List
-if(0)"
-  1.  norm    | normal distribution
-  2.  exp     | exponential distribution
-  3.  gamma   | gamma distribution
-  4.  pois    | poison distribution
-  5.  weibull | weibull distribution
-  6.  cauchy  | cauchy distribution
-  7.  beta    | beta distribution
-  8.  t       | student's t distribution
-  9.  f       | Ficher's F distribution
-  10. chisq   | chisqure distribution
-  11. binom   | binomial distribution
-  12. geom    | geometric distribution
-  13. hyper   | hypergeometric distribution
-  14. logis   | logistic distribution
-  15. lborm   | log normal distribution
-  16. nbinom  | negative binomial distribution
-  17. unif    | uniform distribution
-  18. wilcox  | Wilcoxon rank sum
-  19. sigrank | Wilcoxon signed rank
-"
+1. 정규분포 (normal distribution)
+  - norm
 
-## example
+![jpg](../img/normal_distribution.png)
 
-## standard normal distribution
-curve(dnorm(x), from = -3, to = 3, main = "Density of N(0,1)", ylab="")
+  - 평균과 표준편차로 정의되는 분포로, 자연 현상이나 측정값에서 흔히 볼 수 있다.
+  - 통계학 분포에서 가장 기초가 되는 연속확률분포로, 분석 결과 해석, 일반화 등에 가장 많이 사용된다.
+  - 표준정규분포 [ N(0,1) ] : 평균이 0, 분산이 1인 정규분포
+  - 중심극한정리 : 표본의 갯수 n이 커질 수록 어떠한 분포든 표뵨 평균의 분포는 정규분포에 가까워진다.
 
-## Chisqure distribution
-d <- c(1,5,10)
-dev.off() # delete recent plot
-for(i in d) curve(dchisq(x,df=i),0,20,add=TRUE)
-```
+2. (exponential distribution)
+  - exp
+
+3. (gamma distribution)
+  - gamma
+
+4. (poison distribution)
+  - pois
+
+5. (weibull distribution)
+  - weibull
+
+6. (cauchy distribution)
+  - cauchy
+
+7. (beta distribution)
+  - beta
+
+8. (student's t distribution)
+  - t
+
+9. (Ficher's F distribution)
+  - f
+
+10. (chisqure distribution)
+  - chisq
+
+11. (binomial distribution)
+  - binom
+
+12. (geometric distribution)
+  - geom
+
+13. (hypergeometric distribution)
+  - hyper
+
+14. (logistic distribution)
+  - logis
+
+15. (log normal distribution)
+  - lborm
+
+16. (negative binomial distribution)
+  - nbinom
+
+17. (uniform distribution)
+  - unif
+
+18. (Wilcoxon rank sum)
+  - wilcox
+
+19. (Wilcoxon signed rank)
+  - sigrank
+
+
