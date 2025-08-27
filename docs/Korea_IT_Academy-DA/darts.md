@@ -19,9 +19,13 @@ for(i in 1:n){
   r<-sqrt(sum(x*x))
   score<-score+ifelse(r<1,5-floor(r*5),0)
 }
+
+# Score 합산 표시
 text(-1,-1,"score")
 text(-0.75,-1,score)
+```
 
+```r
 #양궁(원형의 확률로 파이차트 표시(다트))
 360/2/pi #57.3도(=1radian)
 atan(1/1) #0.7853982(라디안에서의 45도)

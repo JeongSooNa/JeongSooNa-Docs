@@ -12,6 +12,11 @@
 
 1. 정규분포 (normal distribution)
   - norm
+  ```r
+  set.seed(1)
+  x <- rnorm(1000, mean = 50, sd = 10)
+  hist(x, main = "정규분포 히스토그램", xlab = "x")
+  ```
 
 ![jpg](../img/normal_distribution.png)
 
@@ -118,18 +123,10 @@
 
 17. 균일분포 (uniform distribution)
   - unif
+  ```r
+  set.seed(2)
+  u <- runif(1000, min = 0, max = 1)
+  hist(u, main = "균일분포 히스토그램", xlab = "x", xlim = c(0, 1))
+  ```
   - 일정 범위 내 동일 확률을 갖는 분포
   - 예 : 주사위, 난수 생성 등
-
-18. 윌콕슨 순위합 검정 (Wilcoxon rank sum)
-  - wilcox
-  - 비모수 검정
-  - 두 집단의 중위수 비교(평균x)
-
-19. 윌콕슨 부호순위 검정 (Wilcoxon signed rank)
-  - sigrank
-  - 짝지어진 데이터들의 순위 검정
-  - 정규성 가정 x
-  
-
-
