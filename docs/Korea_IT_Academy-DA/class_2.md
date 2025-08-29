@@ -16,34 +16,24 @@ getwd()
 setwd('river/')
 ```
 
-- 라이브러리(패키지)가 저정되어 있는 경로 확인
+- 라이브러리(패키지)가 저장되어 있는 경로 확인
 ```r
 .libPaths()
 ```
 
 - 새로운 디렉터리 만들기 
 ```r
-dir.create()
+dir.create("test")
 ```
 
 - 디렉터리 존재 여부 확인
 ```r
-dir.exists()
-```
-
-- 문자열 → 파일경로 
-```r
-file.path()
+dir.exists("./")
 ```
 
 - 운영체제에 따라서 자동으로 경로 표시 해줌 
 ```r
-normalizePath()
-```
-
-- 홈 디렉터리 절대경로 표시 
-```r
-path.expand()
+normalizePath("./")
 ```
 
 - R 시스템 파일 접근하기
@@ -51,10 +41,10 @@ path.expand()
 system.file()
 ```
 
-- 경로에서 파일이름과 디렉터리경로 분리하기
+- 경로에서 파일이름과 디렉토리경로 분리하기
 ```r
-basename()
-dirname()
+basename("./")
+dirname("./")
 ```
 
 ### 파일 다루기
