@@ -1,4 +1,4 @@
-# Class 7 - R Time Series Analytics
+# Class 7 - R Time Series Analysis
 
 ### 시계열 데이터
 
