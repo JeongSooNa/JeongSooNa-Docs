@@ -68,26 +68,4 @@ x;y
 do<-atan(y/x)*360/2/pi
 do
 
-##열지도
-
-#끝잇기 알고리즘 (열 정렬)
-install.packages("gclus")
-library(gclus)
-round(cor(iris[1:4]),digits=2)
-order<-order.endlink(cor(iris[1:4]))
-order
-
-#dist() (행 정렬)
-dist(t(iris[,1:4]))
-sqrt(sum((iris[,1]-iris[,2])^2))
-order<-order.endlink(-dist(t(iris[,1:4])))
-order
-
-test.data<-read.table("C:/Users/Administrator/Desktop/test_matrix_1.txt",header=F)
-test.data
-F<-as.matrix(test.data)
-
-dist(t(F))
-order<-order.endlink(-dist(t(F)))
-order
 ```
