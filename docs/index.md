@@ -67,6 +67,7 @@ Korea_IT_Academy-DA/class_4.md
 Korea_IT_Academy-DA/class_5.md
 Korea_IT_Academy-DA/class_6.md
 Korea_IT_Academy-DA/statistical_simulation.md
+Korea_IT_Academy-DA/visualization.md
 Korea_IT_Academy-DA/darts.md
 Korea_IT_Academy-DA/korean_population.md
 Korea_IT_Academy-DA/river.md
