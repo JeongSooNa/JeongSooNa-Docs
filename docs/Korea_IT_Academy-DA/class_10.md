@@ -1,4 +1,4 @@
-# R Statistical Simulation
+# Class 10 - R Statistical Simulation
 
 - R을 통해 다양한 통계 모의 실험을 구현
 
@@ -261,3 +261,5 @@ burnt<-sum(V==2)
 mtext(side=1,at=20,line=2,paste("burnt = ",burnt))
 mtext(side=1,at=2,line=2,paste("time = ",time))
 ```
+
+##### 요정도?
