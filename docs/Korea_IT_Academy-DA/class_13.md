@@ -120,19 +120,16 @@ autoplot(forecast_arima)
 
 ### 사회·정치 데이터
 
-- 회귀분석/다중회귀 (투표 성향 분석)
-
-데이터: swiss (1888년 스위스 주별 출산율, 교육, 종교 등 47개 주)
-
-분석 목적: 출산율(Fertility)에 영향을 미치는 요인 확인
-
-분석법: 다중회귀 → 여러 독립변수와 종속변수 관계 추정
+- 회귀분석/다중회귀
+    - swiss data (1888년 스위스 주별 출산율, 교육, 종교 등 47개 주)
+    - 출산율(Fertility)에 영향을 미치는 다양한 변수들 확인
+    - 다중회귀 → 여러 독립변수와 종속변수 관계 추정
 
 ```r
 data(swiss)
 fit <- lm(Fertility ~ Education + Catholic + Agriculture, data=swiss)
 summary(fit)
-
+# 잔차분석
 par(mfrow=c(2,2)); plot(fit)
 ```
 

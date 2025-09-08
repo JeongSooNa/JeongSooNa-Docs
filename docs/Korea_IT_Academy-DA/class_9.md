@@ -67,11 +67,9 @@ monte_carlo <- function(n = 100) {
   y <- runif(n)
   # 원 내부 여부
   inside <- (x^2 + y^2) <= 1
-
   # inside 비율 * 4
   pi_hat <- 4 * mean(inside)
   se_hat  <- 4 * sqrt(mean(inside) * (1 - mean(inside)) / n)  # 표준오차 근사
-
   # 그림: 단위 정사각형 + 사분원 경계 + 점 색상
   plot(x, y,
        pch = 16,
@@ -80,12 +78,10 @@ monte_carlo <- function(n = 100) {
   # 사분원 경계 y = sqrt(1 - x^2)
   xs <- seq(0, 1, length.out = 400)
   lines(xs, sqrt(1 - xs^2), lwd = 3)
-
   title(main = sprintf("Monte Carlo π 추정  (n = %d)  →  π̂ = %.5f (± %.5f)", 
                        n, pi_hat, 1.96 * se_hat))
   legend("bottomleft", pch = 16, col = c("red", "blue"),
          legend = c("원 내부", "원 외부"), bty = "n")
-
   invisible(list(pi_hat = pi_hat, se = se_hat))
 }
 
@@ -94,7 +90,7 @@ simulate_pi_plot(1000)
 simulate_pi_plot(10000)
 ```
 
-### 예제
+### 쉬운 예
 
 - 주사위 던지기 시뮬레이션
     - 난수 생성(sample)을 통해 주사위를 여러번 던질 수록 확률분포가 균일분포에 근접한다.
