@@ -1,6 +1,7 @@
 # Class 10 - R Statistical Simulation
 
 - R을 통해 다양한 통계 모의 실험을 구현
+- 대표적인 통계 모의 실험을 통해 실습 진행
 
 ### 움직이는 별
 
