@@ -168,7 +168,7 @@ mt2 <- margin.table(Titanic, c(2,4))
 fourfoldplot(mt2)
 ```
 
-# 공간 데이터 시각화
+### 공간 데이터 시각화
 - 3차원 시각화
     - scatterplot3d: 정적 3D 산점도
     - rgl: 회전/확대가 가능한 동적 3D 그래프
