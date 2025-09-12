@@ -53,7 +53,7 @@ init_plot <- function(){
        main="Galton 핀볼: 공이 하나씩 쌓이는 모습")
   
   # 못(peg) 표시
-  points(pegs, pch=16, cex=0.8, col="gray40")
+  points(pegs, pch=16, cex=0.8, col="gray")
   
   # 이미 쌓인 공 표시
   if (sum(stack) > 0) {
@@ -72,9 +72,9 @@ for (b in 1:n) {
   # 레벨별로 peg을 만나 좌/우 이동
   for (s in 1:peg) {
     step <- if (runif(1) < p) 0.5 else -0.5  # 좌/우 결정
-    segments(x, -(s-1), x+step, -s, col="dodgerblue3")  # 이동 경로 선
+    segments(x, -(s-1), x+step, -s, col="blue")  # 이동 경로 선
     x <- x + step
-    points(x, -s, pch=16, cex=0.6, col="dodgerblue3")   # 현재 위치 점
+    points(x, -s, pch=16, cex=0.6, col="blue")   # 현재 위치 점
     Sys.sleep(0.03)  # 잠깐 멈춰서 "떨어지는" 느낌
   }
   
@@ -99,6 +99,9 @@ for (b in 1:n) {
 - 시에르핀스키 삼각형 (Chaos Game)
   - 꼭짓점 하나를 랜덤하게 고르고, 현재 위치와 꼭짓점의 중점으로 이동
   - 단순한 규칙을 무작위 반복을 하면 삼각형 속에 삼각형이 무한히 반복되는 패턴이 생성
+
+![jpg](../img/Chaos_Game.png)
+
 ```r
 set.seed(2025)
 N <- 20000   # 점 개수 (많을수록 삼각형이 또렷해짐)
@@ -118,12 +121,10 @@ for(i in 1:N){
   xs[i] <- x; ys[i] <- y        # 점 기록
 }
 
-plot(xs, ys, pch=".", col="blue", asp=1, axes=FALSE,
-     main="Chaos Game: Sierpinski Triangle")
-
+plot(xs, ys, pch=".", col="blue", asp=1, axes=FALSE)
 ```
 
-- 고사리 패턴 (Barnsley Fern, IFS:Iterated Function System)
+- 반즐리 고사리 패턴 (Barnsley Fern, IFS:Iterated Function System)
   - 확률적으로 네 가지 선형 변환을 반복 적용.
   - 반복만 했는데 실제 자연의 고사리 잎 같은 형태가 생성
   - 자연의 복잡성도 사실은 간단한 규칙의 반복으로 설명될 수 있다는 예
@@ -134,8 +135,8 @@ x <- 0; y <- 0 # 초기 좌표
 xs <- numeric(N); ys <- numeric(N)
 
 for(i in 1:N){
-  r <- runif(1)   # [0,1) 구간 무작위 확률
-  # 네 가지 아핀 변환 중 하나를 확률적으로 선택
+  r <- runif(1)   # 0~1 구간 무작위 확률
+  # 네 가지 규칙 중 하나를 확률적으로 선택
   if(r < 0.01){        # 줄기
     xn <- 0; yn <- 0.16*y
   } else if(r < 0.86){ # 큰 잎
@@ -152,9 +153,7 @@ for(i in 1:N){
   xs[i] <- x; ys[i] <- y
 }
 
-plot(xs, ys, pch=".", col="forestgreen", asp=1, axes=FALSE,
-     main="Barnsley Fern (Fractal)")
-
+plot(xs, ys, pch=".", col="forestgreen", asp=1, axes=FALSE)
 ```
 
 ### 산불

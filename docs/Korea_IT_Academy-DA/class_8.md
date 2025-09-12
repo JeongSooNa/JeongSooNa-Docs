@@ -168,7 +168,7 @@ sample
 
 - 시각화
 ```r
-sample$year <- sample$year-1964
+sample$year <- sample$year-1964 # 기준 연도를 0으로 맞추기 위해 빼기
 sample
 par(mfrow=c(1,1))
 plot(sample$year, sample$population, type="b")
@@ -176,21 +176,21 @@ plot(sample$year, sample$population, type="b")
 
 - 다항회귀분석 진행
 ```r
+# 1차 선형 회귀
 fit1 <- lm(sample$population ~sample$year)
+# 2차 다항 회귀
 fit2 <- lm(sample$population ~sample$year +
              I(sample$year^2))
+# 3차 다항 회귀
 fit3 <- lm(sample$population ~sample$year +
              I(sample$year^2) + I(sample$year^3))
-fit2b <- lm(sample$population ~
-              poly(sample$year,2,raw=TRUE))
-fit3b <- lm(sample$population ~
-              poly(sample$year,3,raw=TRUE))
+```
 
+- 각 회귀 모형의 설명력(결정계수) 확인
+```r
 summary(fit1)
-summary(fit2) #설명력이 좋게 나옴
-summary(fit3) #설명력이 좋게 나옴 (2차나 3차를 이용하는것이 좋다고 판단.)
-summary(fit2b)
-summary(fit3b)
+summary(fit2)
+summary(fit3)
 ```
 
 - 시각화
@@ -200,3 +200,5 @@ abline(fit3, col=2)
 ```
 
 - 가변수(dummy variable) : 설명변수가 질적변수(숫자가 아닌것.)일 때 사용
+  - 예를 들어 문자형의 데이터가 있을 때 첫 데이터를 기준으로 회귀 모형에서는 가변수를 생성해준다.
+  - ["서울","대전","부산","대전"] -> [0,1,2,1]

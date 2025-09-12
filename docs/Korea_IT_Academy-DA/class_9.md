@@ -85,9 +85,9 @@ monte_carlo <- function(n = 100) {
   invisible(list(pi_hat = pi_hat, se = se_hat))
 }
 
-simulate_pi_plot(100)
-simulate_pi_plot(1000)
-simulate_pi_plot(10000)
+monte_carlo(100)
+monte_carlo(1000)
+monte_carlo(10000)
 ```
 
 ### 쉬운 예
@@ -116,6 +116,6 @@ lotto
 ```r
 set.seed(1)
 steps <- sample(c(-1, 1), size=100, replace=TRUE)  # -1 or +1
-pos <- cumsum(steps)
-plot(pos, type="l", col="blue", main="1차원 랜덤워크", ylab="위치", xlab="시간")
+pos <- cumsum(steps) # 누적합 함수
+plot(pos, type="l", col="blue")
 ```
