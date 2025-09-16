@@ -9,20 +9,33 @@
 - 범죄 발생 통계량 확인
 - 지역 별 데이터를 활용한 지도 시각화
 
-- 데이터 불러오기 & 확인
+- 경로 확인
 ```r
-# CSV 파일 불러오기
-data <- read.csv("criminal_zone_20231231.csv", fileEncoding = "euc-kr")
+getwd() # 현재 경로 확인
+setwd() # workspace 경로 설정
+list.files() # 현재 경로의 파일 확인
+```
 
-# 데이터 구조 확인
+- 파일 불러오기
+  - 사용할 csv file을 R workspace 경로에 옮기거나 해당 file의 경로를 절대 혹은 상대 경로로 입력하여 명시
+```r
+data <- read.csv("criminal_zone_20231231.csv", fileEncoding = "euc-kr")
+```
+
+- 데이터 구조 확인
+```r
 head(data)
 str(data)
 ```
 
 - 지역별 총 범죄 건수 구하기
+  - dplyr 패키지 사용
+    - %>% (파이프) : 해당 변수를 다음 함수의 인자로 넘겨 결과를 할당하는데에 사용
+    - select : 필요한 열만 선택
+    - summarise : 열 별 합계
+    - across : 결과를 테이블로 반환
 ```r
-# dplyr
-install.packages("dplyr")
+install.packages("dplyr ")
 library(dplyr)
 
 # 특정 지역들만 뽑아서 합산 (예: 서울 각 구)
@@ -31,6 +44,15 @@ loc_sum <- data %>%
   summarise(across(서울종로구:서울강남구, sum, na.rm = TRUE))
 
 loc_sum
+```
+
+- 대전에서 발생한 범죄
+```r
+loc_daejeon <- data %>%
+  select(범죄대분류, 범죄중분류, 대전동구:대전대덕구) %>%  # 서울 구만 추출
+  summarise(across(대전동구:대전대덕구, sum, na.rm = TRUE))
+
+loc_daejeon
 ```
 
 - 범죄 유형별 발생 건수 비교
