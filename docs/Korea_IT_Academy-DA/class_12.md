@@ -40,8 +40,8 @@ library(dplyr)
 
 # 특정 지역들만 뽑아서 합산 (예: 서울 각 구)
 loc_sum <- data %>%
-  select(범죄대분류, 범죄중분류, 서울종로구:서울강남구) %>%  # 서울 구만 추출
-  summarise(across(서울종로구:서울강남구, sum, na.rm = TRUE))
+  select(범죄대분류, 범죄중분류, 서울종로구:서울강남구) %>%  # 범죄대분류, 범죄중분류를 골라낸 귀 서울시 구만 추출
+  summarise(across(서울종로구:서울강남구, sum, na.rm = TRUE)) # 추출된 데이터를 합계 계산 / na.rm : 결측값(NA)은 무시
 
 loc_sum
 ```
@@ -49,10 +49,21 @@ loc_sum
 - 대전에서 발생한 범죄
 ```r
 loc_daejeon <- data %>%
-  select(범죄대분류, 범죄중분류, 대전동구:대전대덕구) %>%  # 서울 구만 추출
+  select(범죄대분류, 범죄중분류, 대전동구:대전대덕구) %>% 
   summarise(across(대전동구:대전대덕구, sum, na.rm = TRUE))
 
 loc_daejeon
+```
+
+- long 자료형으로 변환해 막대그래프 형태로 데이터를 시각화 할 수 있다.
+```r
+install.packages("tidyr")
+library(tidyr)
+loc_long <- loc_sum %>%
+  pivot_longer(cols = everything(), names_to = "서울구", values_to = "총범죄")
+loc_long
+library(ggplot2)
+ggplot(loc_long, aes(x = 서울구, y = 총범죄)) + geom_col()
 ```
 
 - 범죄 유형별 발생 건수 비교
@@ -89,6 +100,9 @@ sort(colSums(s_data), decreasing = FALSE)[1:5]
 ##### UPDATING...
 
 - 지도 시각화 (leaflet)
+  - ggmap 구글 지도 API를 활용한 시각화가 활용도나 호환성이 좋아 널리 알려져 있으나, API 라이센스 발급이 필요해 R 지도 시각화에 적합한 leaflet 패키지 사용.
+  - ggmap의 경우 도시 이름을 넣으면 위경도를 자동으로 찾아줘 지도에 표시 등 다양한 기능을 제공하니 조금 더 전문화 된 지도 시각화를 경험하고 싶을 경우 추천.
+  - leaflet 패키지의 경우 위경도를 직접 입력해주어야 하는 번거로움이 있다.
 ```r
 # leaflet 패키지 설치 & 불러오기
 library(leaflet)
@@ -126,4 +140,95 @@ leaflet(coords) %>%
     - 소득공제액(억 원)
     - 과세표준(억 원)
     - 결정세액(억 원)
-- 데이터를 활용한 근로소득 분위 조회
+
+- 데이터 불러오기
+```r
+data <- read.csv("income_percentage_20241231.csv", fileEncoding = "euc-kr")
+```
+
+- 데이터 구조 확인
+```r
+head(data)
+str(data)
+```
+
+- 데이터 앞 뒤 공백 제거
+```r
+data$구분 <- trimws(data$구분)
+```
+
+- 데이터 비교
+```r
+# 상위 1% 데이터
+top1 <- subset(data, 구분 == "상위 1.0%")
+# 상위 90% 데이터
+top90 <- subset(data, 구분 == "상위 90%")
+
+top1
+top90
+```
+
+- 평균 급여 : 총 급여와 인원을 활용한 소득 분위 별 평균 소득 계산
+```r
+data$평균급여 <- data$총급여 / data$인원
+data[,c("구분","평균급여")]
+```
+
+- 위 평균 급여 데이터를 활용한 본인의 소득 입력 시 상위 몇 % 계산
+```r
+본인소득 <- 0.5  # 본인 소득 입력
+# 본인 소득보다 평균급여가 작은 분위 수
+upper_data <- sum(data$평균급여 < 본인소득)
+# 상위 퍼센트 계산
+result <- (upper_data / nrow(data)) * 100
+result
+```
+
+- ggplot으로 시각화 해 본인 소득 위치 표시 그래프
+```r
+```
+##### UPDATING...
+
+- 소득 대비 세금 부담률
+```r
+# 세금부담률 계산: (결정세액 / 총급여) * 100
+data$세금부담률 <- (data$결정세액 / data$총급여) * 100
+
+# 세금 부담률 확인
+head(data[, c("구분", "총급여", "결정세액", "세금부담률")])
+
+# 구분을 숫자 변수로 만들기 위해 문자 제거
+data$구분_num <- as.numeric(gsub("상위 |%", "", data$구분)) # gsub 함수를 사용해 문자 대체
+
+# 데이터 확인
+head(data)
+
+# 데이터 시각화
+library(ggplot2)
+
+ggplot(data, aes(x = 구분_num, y = 세금부담률)) +
+  geom_line(color = "blue") +
+  geom_point(color = "red") +
+  #theme_minimal() +
+  labs(title = "소득분위 별 세금부담률",
+    x = "소득 구간 (%)", y = "세금부담률 (%)")
+```
+
+- 소득공제 비율 분석
+  - 소득공제란? 세금을 계산할 때 법적으로 인정되어 총급여에서 제외할 수 있는 금액
+  - 인적공제, 보험료 공제, 기부금 공제 등 연말정산을 생각하면 된다.
+
+기타 공제: 주택자금, 교육비 등
+```r
+# 소득공제 비율 = 소득공제액 / 총급여
+data$소득공제비율 <- (data$소득공제액 / data$총급여) * 100
+
+# 그래프로 확인
+ggplot(data, aes(x = 구분_num, y = 소득공제비율, group = 1)) +
+  geom_line(color = "blue") +
+  geom_point(color = "red") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(title = "소득분위 별 소득공제 비율",
+    x = "소득 구간 (백분위)", y = "소득공제 비율 (%)")
+```

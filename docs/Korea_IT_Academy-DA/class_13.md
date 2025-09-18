@@ -44,7 +44,7 @@ ggsurvplot(fit_km)
 - Cox 회귀
     - 회귀분석을 통해 나온 회귀 계수를 통해 위험비(HR) 추정
     - 회귀계수 : coef
-    - 위험비(HR : Hazard ratio) : exp(coef)
+    - 위험비(HR : Hazard ratio, exp(coef)) : 실험군의 위험률을 대조군의 위험률로 나눈 것으로, 두 그룹 간 상대적인 위험도를 나타낸다.
 
 ```r
 fit_cox <- coxph(Surv(time, status) ~ age + sex, data = lung)
@@ -129,28 +129,28 @@ autoplot(forecast_arima)
 data(swiss)
 fit <- lm(Fertility ~ Education + Catholic + Agriculture, data=swiss)
 summary(fit)
+par(mfrow=c(2,2))
 # 잔차분석
-par(mfrow=c(2,2)); plot(fit)
+plot(fit) # 회귀 분석이 적합한 모형인지 최종 확인
+par(mfrow=c(1,1))
 ```
 
 해석 포인트: 회귀계수 ± 방향, 유의확률(p-value), 결정계수(R²). 교육↑ → 출산율↓ 같은 해석.
 
 - 텍스트 마이닝 (정치 연설문, SNS 감성분석)
 - 네트워크 분석 (정치인/단체 간 관계망)
+- 다양한 분야에서 회귀분석이 가능하다.
 
 ### 환경·기상 데이터
 - 시계열 예측 (기후 변화 추세)
 - 공간분석 (GIS + R: sf, sp 패키지 활용)
 - 다변량 분석 (환경 요인과 건강의 상관관계)
 
-다변량 분석 – airquality
-
-데이터: airquality (1973년 뉴욕, 오존·태양복사·풍속·기온 일별 관측치)
-
-분석 목적: 오존 농도에 영향을 미치는 기상 요인 파악
-
-분석법: 다변량 회귀, PCA(주성분분석)
-
+- airquality 데이터 분석
+    - 데이터: airquality (1973년 뉴욕, 오존·태양복사·풍속·기온 일별 관측치)
+    - 분석 목적: 오존 농도에 영향을 미치는 기상 요인 파악
+    - 분석법: 다변량 회귀, PCA(주성분분석)
+    - 해석 포인트: 온도↑ → 오존↑, 풍속↑ → 오존↓. PCA로 변수 간 상관구조 시각화.
 ```r
 data(airquality)
 fit_air <- lm(Ozone ~ Temp + Wind + Solar.R, data=airquality)
@@ -161,5 +161,4 @@ aq <- na.omit(airquality[, c("Ozone","Solar.R","Wind","Temp")])
 pca <- prcomp(aq, scale.=TRUE)
 biplot(pca, main="PCA of Air Quality Data")
 ```
-
-해석 포인트: 온도↑ → 오존↑, 풍속↑ → 오존↓. PCA로 변수 간 상관구조 시각화.
+##### UPDATING...
