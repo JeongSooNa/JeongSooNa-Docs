@@ -210,18 +210,3 @@ wireframe(volcano, drape=TRUE, colorkey=TRUE)
 levelplot(volcano, col.regions=terrain.colors(100))
 ```
 
-- 공간 데이터 시각화
-    - ggmap: 지도 API 불러오기
-    - 좌표 위 도형 표시
-```r
-install.packages("ggmap")
-library(ggmap)
-
-# 지도 가져오기
-map1 <- get_map(location="Seoul", zoom=12, maptype="roadmap")
-g <- ggmap(map1)
-
-# 위치 표시
-g + geom_point(aes(x=126.9780, y=37.5665), color="red", size=4) +
-    labs(title="GwangHwaMoon")
-```

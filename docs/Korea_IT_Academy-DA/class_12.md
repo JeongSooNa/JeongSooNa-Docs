@@ -100,8 +100,6 @@ sort(colSums(s_data), decreasing = TRUE)[1:5]
 sort(colSums(s_data), decreasing = FALSE)[1:5]
 ```
 
-##### UPDATING...
-
 - 지도 시각화 (leaflet)
   - ggmap 구글 지도 API를 활용한 시각화가 활용도나 호환성이 좋아 널리 알려져 있으나, API 라이센스 발급이 필요해 R 지도 시각화에 적합한 leaflet 패키지 사용.
   - ggmap의 경우 도시 이름을 넣으면 위경도를 자동으로 찾아줘 지도에 표시 등 다양한 기능을 제공하니 조금 더 전문화 된 지도 시각화를 경험하고 싶을 경우 추천.

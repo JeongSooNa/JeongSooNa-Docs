@@ -116,8 +116,6 @@ forecast_arima <- forecast(fit_arima, h=30)
 autoplot(forecast_arima)
 ```
 
----  UPDATING...  ---
-
 ### 사회·정치 데이터
 
 - 회귀분석/다중회귀
@@ -205,4 +203,3 @@ fviz_pca_biplot(
   title = "PCA Biplot of Air Quality Data"
 )
 ```
-##### UPDATING...

@@ -73,6 +73,7 @@ Korea_IT_Academy-DA/class_10.md
 Korea_IT_Academy-DA/class_11.md
 Korea_IT_Academy-DA/class_12.md
 Korea_IT_Academy-DA/class_13.md
+Korea_IT_Academy-DA/class_14.md
 Korea_IT_Academy-DA/darts.md
 Korea_IT_Academy-DA/korean_population.md
 Korea_IT_Academy-DA/river.md
