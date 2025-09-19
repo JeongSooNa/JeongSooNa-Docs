@@ -1,5 +1,15 @@
 # Class 12 - R Analysis of Public Data
 
+### PATH
+
+- 경로 확인
+  - 외부 데이터, 파일을 다루기 전 현재 내가 R을 실행시키고 있는 위치와 폴더 경로를 확인하는 것이 좋다.
+```r
+getwd() # 현재 경로 확인
+setwd() # workspace 경로 설정
+list.files() # 현재 경로의 파일 확인
+```
+
 ### 범죄 데이터 활용 분석
 
 - [경찰청_범죄 발생 지역별 통계](https://www.data.go.kr/data/3074462/fileData.do)를 활용한 범죄 발생 지역 확인 및 시각화
@@ -8,13 +18,6 @@
     - 외국인 범죄자에 대해서는 국적별(중국, 베트남, 러시아 등) 범죄 발생 수치도 포함
 - 범죄 발생 통계량 확인
 - 지역 별 데이터를 활용한 지도 시각화
-
-- 경로 확인
-```r
-getwd() # 현재 경로 확인
-setwd() # workspace 경로 설정
-list.files() # 현재 경로의 파일 확인
-```
 
 - 파일 불러오기
   - 사용할 csv file을 R workspace 경로에 옮기거나 해당 file의 경로를 절대 혹은 상대 경로로 입력하여 명시
@@ -186,8 +189,20 @@ result
 
 - ggplot으로 시각화 해 본인 소득 위치 표시 그래프
 ```r
+# 구분을 숫자 변수로 만들기 위해 문자 제거
+data$구분_num <- as.numeric(gsub("상위 |%", "", data$구분)) # gsub 함수를 사용해 문자 대체
+
+ggplot(data, aes(x = 구분_num, y = 평균급여)) +
+  geom_col(fill = "skyblue") +  # 막대 그래프
+  geom_hline(yintercept = 본인소득, color = "red", size = 1) + # 본인 소득 선
+  geom_text(aes(x = nrow(data)/2, y = 본인소득, 
+    label = paste0("본인 소득: ", 본인소득)), 
+      vjust = -1, color = "red", size = 4) +
+  labs(title = "분위별 평균급여와 본인 소득 위치",
+    x = "구분_num",
+    y = "평균급여") +
+  theme_minimal()
 ```
-##### UPDATING...
 
 - 소득 대비 세금 부담률
 ```r
@@ -196,9 +211,6 @@ data$세금부담률 <- (data$결정세액 / data$총급여) * 100
 
 # 세금 부담률 확인
 head(data[, c("구분", "총급여", "결정세액", "세금부담률")])
-
-# 구분을 숫자 변수로 만들기 위해 문자 제거
-data$구분_num <- as.numeric(gsub("상위 |%", "", data$구분)) # gsub 함수를 사용해 문자 대체
 
 # 데이터 확인
 head(data)

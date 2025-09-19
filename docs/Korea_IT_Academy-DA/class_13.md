@@ -146,19 +146,63 @@ par(mfrow=c(1,1))
 - 공간분석 (GIS + R: sf, sp 패키지 활용)
 - 다변량 분석 (환경 요인과 건강의 상관관계)
 
-- airquality 데이터 분석
+- 대기질(airquality) 데이터 분석
     - 데이터: airquality (1973년 뉴욕, 오존·태양복사·풍속·기온 일별 관측치)
     - 분석 목적: 오존 농도에 영향을 미치는 기상 요인 파악
     - 분석법: 다변량 회귀, PCA(주성분분석)
     - 해석 포인트: 온도↑ → 오존↑, 풍속↑ → 오존↓. PCA로 변수 간 상관구조 시각화.
+
+- 데이터 불러오기
 ```r
 data(airquality)
-fit_air <- lm(Ozone ~ Temp + Wind + Solar.R, data=airquality)
-summary(fit_air)
+# Ozone : 오존
+# Solar.R : 태양 복사량
+# Wind : 풍속
+# Temp : 기온
+head(airquality)
+summary(airquality)
+```
 
-# PCA
-aq <- na.omit(airquality[, c("Ozone","Solar.R","Wind","Temp")])
-pca <- prcomp(aq, scale.=TRUE)
-biplot(pca, main="PCA of Air Quality Data")
+- 다변량 회귀분석 진행
+    - 오존의 농도를 기온, 풍속, 태양복사량으로 설명이 가능한가?
+    - 각 독립변수 별 회귀계수(Estimate) 및 p-value 확인을 통해 통계적 유의성 확인
+    - R-squared 결정계수를 통해 모델 설명력 확인
+```r
+fit_air <- lm(Ozone ~ Temp + Wind + Solar.R, data=airquality)
+summary(fit_air) # 회귀분석 결과 요약
+```
+
+- 주성분 분석(PCA)
+    - 변수 간 상관관계가 있을 때 차원을 축소하기 위해 분석
+    - 시각화 해석
+        - 점 : 각 관측치
+        - 화살표 : 각 변수가 주성분 공간에서 어떤 방향과 크기로 기여하는지 확인
+```r
+aq <- na.omit(airquality[, c("Ozone","Solar.R","Wind","Temp")]) # na.omit : 결측값(NA)이 있는 행은 제외
+pca <- prcomp(aq, scale.=TRUE) # prcomp : 주성분 분석 함수
+summary(pca)
+```
+
+- 주성분 분석 시각화
+```r
+biplot(pca, main="PCA of Air Quality Data") # 주성분 분석 결과를 2차원 평면에 시각화
+```
+
+- 주성분 분석 시각화 심화 패키지 사용
+```r
+install.packages("factoextra")
+library(factoextra)
+
+fviz_pca_biplot(
+  pca,
+  repel = TRUE,             # 텍스트 겹치지 않게
+  col.var = "red",          # 변수 화살표 색
+  col.ind = "gray",       # 관측치 점 색
+  pointshape = 21,          # 점 모양
+  fill.ind = "skyblue",     # 점 색 채우기
+  gradient.cols = c("blue", "orange", "red"), # 변수 기여도 색상
+  arrowsize = 1.2,
+  title = "PCA Biplot of Air Quality Data"
+)
 ```
 ##### UPDATING...
