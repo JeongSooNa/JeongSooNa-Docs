@@ -2,6 +2,8 @@
 
 ### leaflet 패키지를 활용한 지도 시각화
 
+- ggmap을 지도 시각화에 주로 사용하였으나, 2018년도 이 후 API 키 제한이 생겨, 최근에는 leaflet 패키지를 많이 사용
+
 - [서울시 공공와이파이 서비스 데이터](https://data.seoul.go.kr/dataList/OA-20883/S/1/datasetView.do) 사용
 
 - 패키지 불러오기
