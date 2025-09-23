@@ -17,12 +17,12 @@
 - ㈜ 신테카바이오 AI신약개발전략기획팀 주임연구원
 - (재직중) ㈜ 마루이엔지 FA팀/주임
     - 서버 인프라 및 시스템 관리 (Linux)
-    - 백업 및 모니터링 자동화 프로그램 개발 및 운영 (Python)
-- (재직중) 코리아 IT 아카데미 강사
+    - 시스템 자동화 프로그램 개발 및 운영 (Python)
+- (파트타임) 코리아 IT 아카데미 강사
     - ADsP 자격시험 대비
-    - 서원대학교 ADsP 자격 대비 위탁 교육
     - 파이썬 기초 프로그래밍
     - R 데이터 분석
+    - 서원대학교 데이터분석 직무역량교육
 
 ##### 자격
 
@@ -52,6 +52,13 @@
 
 ```{toctree}
 index
+```
+
+```{toctree}
+:maxdepth: 2
+:caption: Korea IT Academy - ADsP
+
+Korea_IT_Academy-ADsP/index.md
 ```
 
 ```{toctree}
@@ -110,13 +117,6 @@ Korea_IT_Academy-Python/Data_Analysis_2.md
 Korea_IT_Academy-Python/python_back-end.md
 Korea_IT_Academy-Python/python_crawling.md
 Korea_IT_Academy-Python/python_project.md
-```
-
-```{toctree}
-:maxdepth: 2
-:caption: Korea IT Academy - ADsP
-
-Korea_IT_Academy-ADsP/index.md
 ```
 
 ```{toctree}
